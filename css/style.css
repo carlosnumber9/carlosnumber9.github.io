@@ -1,0 +1,38 @@
+
+
+:root {
+    --blur-intensity: 4px;
+}
+
+/*
+@keyframes blurring {
+    0% {
+        filter: blur(0px)
+    }
+    100% {
+        filter: blur(var(--blur-intensity))
+    }
+}
+
+
+html {
+    background:url(../img/fondo1.jpg) repeat fixed;
+    background-size: 100%;
+
+    animation: blurring 1s linear infinite;
+
+}
+*/
+
+
+#bground {
+    width: 100%;
+}
+
+.bgBlur {
+    -webkit-filter: blur(var(--blur-intensity)); -moz-filter: blur(var(--blur-intensity));
+    -o-filter: blur(var(--blur-intensity)); -ms-filter: blur(var(--blur-intensity)); 
+    filter: url(#blur); filter: blur(var(--blur-intensity));  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+    -webkit-transition: 2s -webkit-filter linear;
+    -o-transition: 2s -o-filter linear;
+}
