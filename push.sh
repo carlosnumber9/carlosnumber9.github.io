@@ -1,5 +1,8 @@
-git add --all
 
-git commit -m $1
+GIT="which git"
 
-git push -u origin master
+${GIT} add --all
+
+${GIT} commit -m $1
+
+${GIT} push -u origin master
