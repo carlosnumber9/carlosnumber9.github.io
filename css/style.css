@@ -59,7 +59,7 @@ body {
 }
 */
 
-#retrato, #nombre, .cuadro, #estudiante, .mtext {
+#retrato, #nombre, .cuadro, #estudiante, .mtext, #tarjeta {
     display: none;
 }
 
@@ -67,7 +67,7 @@ body {
     display: none;
 }
 
-.cuadro {
+.cuadro, #tarjeta {
     background-color: rgba(153,153,153,0.5);
 
 /*
@@ -80,10 +80,13 @@ body {
     -moz-box-shadow: 0px 0px 9px 2px rgba(148,148,148,1);
     box-shadow: 0px 0px 9px 2px rgba(148,148,148,1);
 */
-    min-height: 40px;
+    min-height: 60px;
 }
 
 .ddown, .dup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     opacity: 0;
 }
 
