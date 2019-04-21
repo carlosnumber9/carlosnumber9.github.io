@@ -44,6 +44,8 @@ $(document).ready(function() {
         titulo.addClass('tarjetaMovil');
     }
 
+    if(ancho < 460) tApartados.css('font-size', '1rem');
+
 
     setTimeout(function() { 
         retrato.fadeIn(1000);
@@ -64,7 +66,7 @@ $(document).ready(function() {
     }, 900);
 
     setTimeout(function() { 
-        if ((ancho <= 450) || (750 < ancho && ancho < 830) ){
+        if ((ancho <= 484) || (750 < ancho && ancho < 830) ){
             tarjeta.animate({height: '175px'}, 250);
         }
         else tarjeta.animate({height: extenderDiv(tarjeta)}, 250);
