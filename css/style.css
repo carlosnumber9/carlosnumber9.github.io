@@ -17,6 +17,10 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
+p {
+    text-align: justify;
+}
+
 
 @keyframes blurring {
     0% {
@@ -149,12 +153,22 @@ body {
     height: 40px;
 }
 
-.ddown, .dup {
+.sdrop {
     position: absolute;
     top: 10px;
     right: 10px;
     opacity: 0;
+    display: block;
 }
+/*
+.sdrop {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    border: 1px solid black;
+}
+*/
 
 .hback {
     display: none;
