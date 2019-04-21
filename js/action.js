@@ -35,6 +35,12 @@ $(document).ready(function() {
     if (ancho <= 520) {
         tarjeta.removeClass('ml-5');
         tarjeta.addClass('tarjetaMovil');
+
+        nombre.removeClass('ml-5');
+        nombre.addClass('tarjetaMovil');
+
+        titulo.removeClass('ml-5');
+        titulo.addClass('tarjetaMovil');
     }
 
 
