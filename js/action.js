@@ -30,6 +30,13 @@ $(document).ready(function() {
     initHeight1 = '40px';
     expHeight = extenderDiv(tarjeta);
 
+    ancho = $(window).width();
+
+    if (ancho <= 520) {
+        tarjeta.removeClass('ml-5');
+        tarjeta.addClass('tarjetaMovil');
+    }
+
 
     setTimeout(function() { 
         retrato.fadeIn(1000);
@@ -50,7 +57,10 @@ $(document).ready(function() {
     }, 900);
 
     setTimeout(function() { 
-        tarjeta.animate({height: extenderDiv(tarjeta)}, 250);
+        if ((ancho <= 450) || (750 < ancho && ancho < 830) ){
+            tarjeta.animate({height: '175px'}, 250);
+        }
+        else tarjeta.animate({height: extenderDiv(tarjeta)}, 250);
     }, 1200);
     
     setTimeout(function() { 
