@@ -4,6 +4,7 @@ function extenderDiv(selector){
 
    totalHeight = 0;
    selector.children().not('.hback').not('.sdrop').each(function(){
+        //if (!selector.hasClass('cerrado') && $(this).is(":visible")) 
         totalHeight += $(this).outerHeight(true); // true = include margins
     });
     console.log("Total Height: " + totalHeight + "px");
@@ -107,6 +108,7 @@ $(document).ready(function() {
             apartado.animate({height: extenderDiv(apartado)}, 250);
 
             apartado.children('.apcontent').fadeIn(500);
+            
 
         }
         else {
@@ -114,6 +116,8 @@ $(document).ready(function() {
             apartado.children('.sdrop').children('.ddown').removeClass('fa-angle-up').addClass('fa-angle-down');
             
             apartado.children().not('.sdrop').fadeOut(250);
+            
+
             apartado.animate({height: '60px'}, 250);
             
             

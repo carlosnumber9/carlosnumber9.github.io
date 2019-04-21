@@ -153,6 +153,10 @@ p {
     height: 40px;
 }
 
+.mtext {
+    font-size: 1em;
+}
+
 .sdrop {
     position: absolute;
     top: 10px;
