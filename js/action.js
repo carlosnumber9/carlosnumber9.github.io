@@ -27,6 +27,8 @@ $(document).ready(function() {
     cuadros = $('.cuadro');
     apartados = $('.apartado');
     tApartados = $('.mtext');
+    hback = $('.hback');
+    sdrop = $('.sdrop');
 
     initHeight1 = '40px';
     expHeight = extenderDiv(tarjeta);
@@ -113,6 +115,8 @@ $(document).ready(function() {
             
 
         }
+
+
         else {
 
             apartado.children('.sdrop').children('.ddown').removeClass('fa-angle-up').addClass('fa-angle-down');
@@ -125,9 +129,24 @@ $(document).ready(function() {
             
         }
 
-        apartado.toggleClass('cerrado'); 
+apartado.toggleClass('cerrado'); 
     });
 
+
+/*
+    sdrop.click(function(){
+
+        $(this).parent('.apartado').children('.sdrop').children('.ddown').removeClass('fa-angle-up').addClass('fa-angle-down');
+            
+        $(this).parent('.apartado').children().not('.sdrop').fadeOut(250);
+            
+        $(this).parent('.apartado').animate({height: '60px'}, 250);
+
+        $(this).parent('.apartado').toggleClass('cerrado');
+
+
+    });
+*/
 
 
 

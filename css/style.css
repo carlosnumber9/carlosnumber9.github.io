@@ -115,6 +115,8 @@ p {
 */
 }
 
+
+
 .cbtn {
     display: inline-block;
     color: white;
@@ -183,7 +185,35 @@ p {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf737373', endColorstr='#00e5e5e5',GradientType=0 ); /* IE6-9 */
 }
 
+
 .tarjetaMovil {
     margin-left: 2rem!important;
+}
+
+.fdiv {
+    background-color: rgba(219,219,219,0.75);
+    display: inline-block;
+    margin-bottom: 2rem!important;
+}
+
+.fdiv * {
+    margin-bottom: 1rem!important;
+}
+
+.fano, .ftit {
+    display: inline-block;
+}
+
+.ftit {
+    margin-left: 1rem!important;
+}
+
+.floc {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.fcontent * {
+    font-size: 1rem;
 }
 
