@@ -1,153 +1,164 @@
+// AUXILIAR FUNCTIONS
 
 
-function extenderDiv(selector){
+/**
+ * Extends the size of a content DIV
+ * @param {*} elementToExpand Content DIV to expand
+ */
+var expandContent = function(elementToExpand) {
 
-   totalHeight = 0;
-   selector.children().not('.hback').not('.sdrop').each(function(){
-        //if (!selector.hasClass('cerrado') && $(this).is(":visible")) 
+    let totalHeight = 0;
+    elementToExpand.children().not('.hback').not('.sdrop').each(function() {
         totalHeight += $(this).outerHeight(true); // true = include margins
     });
-    console.log("Total Height: " + totalHeight + "px");
-
     return totalHeight;
-
-}
-
+};
 
 
 
+/**
+ * Makes every site DIV to appear with anmimations 
+ */
+var init = function() {
 
-$(document).ready(function() {
-
-    cuerpo = $('body');
-    retrato = $('#retrato');
-    nombre = $('#nombre');
-    titulo = $('#estudiante');
-    tarjeta = $('#tarjeta');
-    cuadros = $('.cuadro');
-    apartados = $('.apartado');
-    tApartados = $('.mtext');
-    hback = $('.hback');
-    sdrop = $('.sdrop');
-
-    initHeight1 = '40px';
-    expHeight = extenderDiv(tarjeta);
-
-    ancho = $(window).width();
+    const portrait = $('#portrait');
+    const myName = $('#myName');
+    const titulo = $('#estudiante');
+    const card = $('#card');
+    const cuadros = $('.cuadro');
+    const tApartados = $('.mtext');
+    const ancho = $(window).width();
+    const sections = $('section');
 
     if (ancho <= 520) {
-        tarjeta.removeClass('ml-5');
-        tarjeta.addClass('tarjetaMovil');
+        card.removeClass('ml-5');
+        card.addClass('tarjetaMovil');
 
-        nombre.removeClass('ml-5');
-        nombre.addClass('tarjetaMovil');
+        myName.removeClass('ml-5');
+        myName.addClass('tarjetaMovil');
 
         titulo.removeClass('ml-5');
         titulo.addClass('tarjetaMovil');
     }
 
-    if(ancho < 460) tApartados.css('font-size', '1rem');
+    if (ancho < 460) tApartados.css('font-size', '1rem');
 
-
-    setTimeout(function() { 
-        retrato.fadeIn(1000);
+    setTimeout(function() {
+        portrait.fadeIn(1000);
     }, 500);
 
-    setTimeout(function() { 
-        nombre.fadeIn(1000);
+    setTimeout(function() {
+        myName.fadeIn(1000);
     }, 750);
 
-    setTimeout(function() { 
+    setTimeout(function() {
         titulo.fadeIn(1000);
     }, 875);
 
-    setTimeout(function() { 
+    setTimeout(function() {
         cuadros.fadeIn(1000);
-        tarjeta.fadeIn(500);
+        card.fadeIn(500);
         tApartados.fadeIn(1000);
     }, 900);
 
-    setTimeout(function() { 
-        if ((ancho <= 484) || (750 < ancho && ancho < 830) ){
-            tarjeta.animate({height: '175px'}, 250);
-        }
-        else tarjeta.animate({height: extenderDiv(tarjeta)}, 250);
+    setTimeout(function() {
+        if ((ancho <= 484) || (750 < ancho && ancho < 830)) {
+            card.animate({ height: '175px' }, 250);
+        } else card.animate({ height: expandContent(card) }, 250);
     }, 1200);
-    
-    setTimeout(function() { 
-        tarjeta.find('*').animate({opacity: 1}, 250);
+
+    setTimeout(function() {
+        card.find('*').animate({ opacity: 1 }, 250);
         cuadros.find('*').not('.apcontent').not('.hback').fadeIn(1000);
     }, 1750);
 
 
-    apartados.mouseenter(function(){
-        let apartado = $(this);
 
-        cuerpo.css('cursor', 'pointer');
-        apartado.animate({'backgroundColor': "rgba(115,115,115,0.5)"}, 200);
+    addMouseEnterEventListenersForSections(sections);
 
-        apartado.children('.sdrop').animate({opacity: 1}, 100);
-    
+    addMouseLeaveEventListenersForSections(sections);
+
+    addClickEventListenersForSections(sections);
+
+};
+
+
+/**
+ * Defines the actions when mouse is inside a section container
+ * @param {*} sectionsSelector 
+ */
+var addMouseEnterEventListenersForSections = function(sectionsSelector) {
+
+    const body = $('body');
+    sectionsSelector.mouseenter(function() {
+        let section = $(this);
+        body.css('cursor', 'pointer');
+        section.animate({ 'backgroundColor': "rgba(115,115,115,0.5)" }, 200);
+        section.children('.sdrop').animate({ opacity: 1 }, 100);
     });
 
-    apartados.mouseleave(function(){
-        let apartado = $(this);
+};
 
-        cuerpo.css('cursor', 'auto');
-        apartado.animate({'backgroundColor': "rgba(153,153,153,0.5)"}, 200);
-       
-       apartado.children('.sdrop').animate({opacity: 0}, 100);
 
-        apartado.finish();
+
+/**
+ * Defines the actions when mouse goes outside of a section container
+ * @param {*} sectionsSelector 
+ */
+var addMouseLeaveEventListenersForSections = function(sectionsSelector) {
+
+    const body = $('body');
+    sectionsSelector.mouseleave(function() {
+        let section = $(this);
+        body.css('cursor', 'auto');
+        section.animate({ 'backgroundColor': "rgba(153,153,153,0.5)" }, 200);
+        section.children('.sdrop').animate({ opacity: 0 }, 100);
+        section.finish();
     });
 
+};
 
-    apartados.click(function(){
-        let apartado = $(this);
 
-        if(apartado.hasClass('cerrado')){
+/**
+ * Defines the actions when clicking inside a section container
+ * @param {*} sectionsSelector 
+ */
+var addClickEventListenersForSections = function(sectionsSelector) {
 
-            apartado.children('.sdrop').children('.ddown').removeClass('fa-angle-down').addClass('fa-angle-up');
-            apartado.children('.hback').fadeIn(1000);
-            apartado.animate({height: extenderDiv(apartado)}, 250);
+    sectionsSelector.click(function() {
+        let section = $(this);
 
-            apartado.children('.apcontent').fadeIn(500);
-            
-
+        if (section.hasClass('cerrado')) {
+            section.children('.sdrop').children('.ddown').removeClass('fa-angle-down').addClass('fa-angle-up');
+            section.children('.hback').fadeIn(1000);
+            section.animate({ height: expandContent(section) }, 250);
+            section.children('.apcontent').fadeIn(500);
+        } else {
+            section.children('.sdrop').children('.ddown').removeClass('fa-angle-up').addClass('fa-angle-down');
+            section.children().not('.sdrop').fadeOut(250);
+            section.animate({ height: '60px' }, 250);
         }
-
-
-        else {
-
-            apartado.children('.sdrop').children('.ddown').removeClass('fa-angle-up').addClass('fa-angle-down');
-            
-            apartado.children().not('.sdrop').fadeOut(250);
-            
-
-            apartado.animate({height: '60px'}, 250);
-            
-            
-        }
-
-apartado.toggleClass('cerrado'); 
+        section.toggleClass('cerrado');
     });
 
-
-/*
-    sdrop.click(function(){
-
-        $(this).parent('.apartado').children('.sdrop').children('.ddown').removeClass('fa-angle-up').addClass('fa-angle-down');
-            
-        $(this).parent('.apartado').children().not('.sdrop').fadeOut(250);
-            
-        $(this).parent('.apartado').animate({height: '60px'}, 250);
-
-        $(this).parent('.apartado').toggleClass('cerrado');
+};
 
 
+
+
+
+/**
+ * action.js actions
+ */
+$(document).ready(function() {
+
+    init();
+
+    const card = $('#card');
+    expandContent(card);
+
+    $(document).on('resize', function() {
+        init();
     });
-*/
-
-
 
 });
