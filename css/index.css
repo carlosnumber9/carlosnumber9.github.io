@@ -54,6 +54,10 @@
   .site-name {
     font-size: 3ch;
   }
+
+  .card-text {
+    font-size: 4.5vw;
+  }
 }
 
 .site-name,
