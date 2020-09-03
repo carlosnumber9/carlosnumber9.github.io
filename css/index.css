@@ -156,3 +156,12 @@ a {
   margin: auto;
   padding: 4px;
 }
+
+.second-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.second-column * {
+  margin: 3px;
+}
