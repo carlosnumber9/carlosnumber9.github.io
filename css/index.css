@@ -17,6 +17,9 @@
   justify-content: flex-start;
   align-items: center;
 
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+
   /* BOX SHADOW */
   -webkit-box-shadow: 3px 0px 5px 0px rgba(156, 156, 156, 1),
     -3px 0px 5px 0px rgba(156, 156, 156, 1);
@@ -53,6 +56,10 @@
 
   .site-name {
     font-size: 3ch;
+  }
+
+  .card-text {
+    font-size: 4.5vw;
   }
 }
 
@@ -148,4 +155,13 @@ a {
 .first-column * {
   margin: auto;
   padding: 4px;
+}
+
+.second-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.second-column * {
+  margin: 3px;
 }
