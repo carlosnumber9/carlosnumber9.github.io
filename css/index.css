@@ -57,15 +57,10 @@
   .site-name {
     font-size: 3ch;
   }
-
-  .card-text {
-    font-size: 4.5vw;
-  }
 }
 
 .site-name,
-.site-subtitle,
-.presentation-card {
+.site-subtitle {
   font-family: "Microsoft Jhenghei", serif;
   font-weight: lighter;
 }
@@ -79,29 +74,6 @@
   color: rgb(75, 75, 75);
 }
 
-.presentation-card {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: space-around;
-  margin-top: 30px;
-padding: 10px;
-  width: 80%;
-
-  -webkit-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-  -moz-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-  box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-}
-
-.card-column {
-  display: grid;
-}
-
-.first-column {
-  grid-template-columns: 2;
-  grid-template-rows: 4;
-}
-
 .simple-list {
   display: flex;
   flex-direction: column;
@@ -110,58 +82,4 @@ padding: 10px;
 a {
   color: rgb(39, 39, 39);
   text-decoration: none;
-}
-
-#age-icon {
-  grid-row: 1 / 2;
-  grid-column: 1/ 2;
-}
-
-#age-text {
-  grid-row: 1 / 2;
-  grid-column: 2 / 3;
-}
-
-#phone-number-icon {
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
-}
-
-#phone-number-text {
-  grid-row: 2 / 3;
-  grid-column: 2 / 3;
-}
-
-#email-icon {
-  grid-row: 3 / 4;
-  grid-column: 1 / 2;
-}
-
-#email-text {
-  grid-row: 3 / 4;
-  grid-column: 2 / 3;
-}
-
-#address-icon {
-  grid-row: 4 / 5;
-  grid-column: 1 / 2;
-}
-
-#address-text {
-  grid-row: 4 / 5;
-  grid-column: 2 / 3;
-}
-
-.first-column * {
-  margin: auto;
-  padding: 4px;
-}
-
-.second-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.second-column * {
-  margin: 3px;
 }
