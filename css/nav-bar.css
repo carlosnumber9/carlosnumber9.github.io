@@ -33,6 +33,32 @@
     cursor: pointer;
 }
 
-/* .navbar * {
-    border: 1px solid black;
-} */
+@media only screen and (min-width: 980px) {
+    .navbar-item-icon {
+        display: none;
+    }
+
+    .navbar-item-title {
+        display: unset;
+    }
+  }
+  
+  @media only screen and (min-width: 600px) and (max-width: 980px) {
+    .navbar-item-icon {
+        display: unset;
+    }
+
+    .navbar-item-title {
+        display: none;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .navbar-item-icon {
+        display: unset;
+    }
+
+    .navbar-item-title {
+        display: none;
+    }
+  }
