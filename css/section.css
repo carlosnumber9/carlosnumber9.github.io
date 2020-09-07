@@ -27,3 +27,7 @@
   .section * {
     display: none;
   }
+
+  .main-content {
+    text-align: justify;
+  }
