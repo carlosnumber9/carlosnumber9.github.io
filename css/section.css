@@ -13,10 +13,7 @@
     -webkit-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
     -moz-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
     box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-  
-    font-family: "Microsoft Jhenghei", serif;
-    font-weight: lighter;
-  
+
     margin-bottom: 30px;
   }
   
@@ -29,4 +26,8 @@
   
   .section * {
     display: none;
+  }
+
+  .main-content {
+    text-align: justify;
   }
