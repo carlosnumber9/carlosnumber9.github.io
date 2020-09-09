@@ -62,8 +62,13 @@ function sendMail(mailInfo) {
         Body : getEmailMessage(mailInfo)
     }).then(
       message => { 
-          if(message === 'OK') console.debug('Mail sent succesfully.');
-          else console.error(message);
+          if(message === 'OK') {
+              console.debug('Mail sent succesfully.');
+              $('#sending-icon').fadeOut(100).promise().done(() => {
+                $('#mail-sent-text').fadeIn();
+              })
+            }
+            else console.error(message);
       }
     );
 }
@@ -154,29 +159,35 @@ function closeContactWindow() {
 
 
 function submit() {
+  var name = $("#name").val();
+  var subject = $("#subject").val();
+  var proposal = $("#proposal").val();
+  var number = $("#number").val();
+  var email = $("#email").val();
 
-    var name = $('#name').val();
-    var subject = $('#subject').val();
-    var proposal = $('#proposal').val();
-    var number = $('#number').val();
-    var email = $('#email').val();
+  if (name && subject && proposal && (number || email)) {
+    $("#contact-form")
+      .fadeOut(200)
+      .promise()
+      .done(() => {
+        $("#sending-icon")
+          .fadeIn(100)
+          .promise()
+          .done(() => {
+            var mailInfo = {
+              name: name,
+              number: number,
+              email: email,
+              subject: subject,
+              proposal: proposal,
+            };
 
-    if((name && subject && proposal) && (number || email)) {
-
-        var mailInfo = {
-            name: name,
-            number: number,
-            email: email,
-            subject: subject,
-            proposal: proposal
-        }
-
-        sendMail(mailInfo);
-    }
-    else {
-        console.error('Must complete form info first.');
-    }
-    
+            sendMail(mailInfo);
+          });
+      });
+  } else {
+    console.error("Must complete form info first.");
+  }
 }
 
 
