@@ -185,3 +185,15 @@
       display: none;
       color: white;
   }
+
+  input.empty-field {
+      border: 3px solid red;
+  }
+
+  textarea.empty-field {
+      border: 3px solid red;
+  }
+
+  input[type=submit] {
+      cursor: pointer;
+  }
