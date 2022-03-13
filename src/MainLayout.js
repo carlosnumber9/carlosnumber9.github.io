@@ -1,9 +1,9 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
 const { Header, Content, Footer } = Layout;
+import { SECTIONS } from './constants';
 
 export function MainLayout() {
-    const options = new Array(15).fill(null);
     return (
         <>
             <Layout>
@@ -12,8 +12,8 @@ export function MainLayout() {
                 </Header>
                 <Content>
                     <Menu theme="light" mode="horizontal">
-                        {options.map((_, index) => (
-                            <Menu.Item key={index + 1}>{`nav ${index + 1}`}</Menu.Item>
+                        {SECTIONS.map((section, index) => (
+                            <Menu.Item key={index + 1}>{`${section.name}`}</Menu.Item>
                         ))}
                     </Menu>
                 </Content>
