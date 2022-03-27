@@ -7,13 +7,13 @@ import {
     faProjectDiagram,
 } from '@fortawesome/free-solid-svg-icons';
 
-const SECTIONS = [
-    { name: 'Introduction', icon: faHandSpock },
-    { name: 'Career goals', icon: faCrosshairs },
-    { name: 'Academic background', icon: faGraduationCap },
-    { name: 'Experiencie', icon: faBriefcase },
-    { name: 'Skills', icon: faLaptopCode },
-    { name: 'Projects', icon: faProjectDiagram },
+export const SECTIONS = [
+    { key: 0, name: 'Introduction', icon: faHandSpock },
 ];
 
-export default SECTIONS;
+export const FOOTER_STYLE = {
+    position: 'absolute',
+    top: 'calc(100vh - 70px)',
+    width: '100%',
+    textAlign: 'center',
+};

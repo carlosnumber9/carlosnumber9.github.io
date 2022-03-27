@@ -32,7 +32,9 @@ export function MainLayout() {
                         ))}
                     </Menu>
                 </Content>
-                <Footer>Carlos Pinedo Sánchez ©2018 Created by Ant UED</Footer>
+                <Footer style={FOOTER_STYLE}>
+          Carlos Pinedo Sánchez ©2018 Created by Ant UED
+                </Footer>
             </Layout>
         </>
     );
