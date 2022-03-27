@@ -1,13 +1,8 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
+import { Layout } from 'antd';
+import { Navbar } from './fragments/Navbar';
+import { FOOTER_STYLE } from './constants';
 const { Header, Content, Footer } = Layout;
-import SECTIONS from './constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-const menuStyle = {
-    display: 'flex',
-    justifyContent: 'center'
-};
 
 export function MainLayout() {
     return (
@@ -17,20 +12,7 @@ export function MainLayout() {
                     <h2> Carlos Pinedo Sánchez </h2>
                 </Header>
                 <Content>
-                    <Menu theme="light" mode="horizontal" style={menuStyle}>
-                        {SECTIONS.map((section, index) => (
-                            <>
-                                <Menu.Item key={index + 1}>
-                                    <span className='section-name'>{`${section.name}`}</span>
-                                    <FontAwesomeIcon
-                                        className="section-icon"
-                                        icon={section.icon}
-                                        size="2xl"
-                                    />
-                                </Menu.Item>
-                            </>
-                        ))}
-                    </Menu>
+                    <Navbar></Navbar>
                 </Content>
                 <Footer style={FOOTER_STYLE}>
           Carlos Pinedo Sánchez ©2018 Created by Ant UED

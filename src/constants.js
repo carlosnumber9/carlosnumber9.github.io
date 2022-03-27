@@ -17,3 +17,8 @@ export const FOOTER_STYLE = {
     width: '100%',
     textAlign: 'center',
 };
+
+export const MENU_STYLE = {
+    display: 'flex',
+    justifyContent: 'center',
+};
