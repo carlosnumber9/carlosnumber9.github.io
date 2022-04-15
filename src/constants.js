@@ -9,6 +9,11 @@ import {
 
 export const SECTIONS = [
     { key: 0, name: 'Introduction', icon: faHandSpock },
+    { key: 1, name: 'Career goals', icon: faCrosshairs },
+    { key: 2, name: 'Academic background', icon: faGraduationCap },
+    { key: 3, name: 'Experiencie', icon: faBriefcase },
+    { key: 4, name: 'Skills', icon: faLaptopCode },
+    { key: 5, name: 'Projects', icon: faProjectDiagram },
 ];
 
 export const FOOTER_STYLE = {
