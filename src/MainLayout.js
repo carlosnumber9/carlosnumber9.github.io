@@ -3,13 +3,14 @@ import { Layout } from 'antd';
 import { Navbar } from './fragments/Navbar';
 import { FOOTER_STYLE } from './constants';
 const { Header, Content, Footer } = Layout;
+import './App.css';
 
 export function MainLayout() {
     return (
         <>
-            <Layout>
-                <Header>
-                    <h2> Carlos Pinedo Sánchez </h2>
+            <Layout className='site-layout-content'>
+                <Header style={{ backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
+                    <h1> Carlos Pinedo Sánchez </h1>
                 </Header>
                 <Content>
                     <Navbar></Navbar>
