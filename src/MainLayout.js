@@ -4,6 +4,7 @@ import { Navbar } from './fragments/Navbar';
 import { FOOTER_STYLE } from './constants';
 const { Header, Content, Footer } = Layout;
 import './App.css';
+import { PresentationCard } from './fragments/PresentationCard';
 
 export function MainLayout() {
     return (
@@ -13,6 +14,7 @@ export function MainLayout() {
                     <h1> Carlos Pinedo Sánchez </h1>
                 </Header>
                 <Content>
+                    <PresentationCard></PresentationCard>
                     <Navbar></Navbar>
                 </Content>
                 <Footer style={FOOTER_STYLE}>
