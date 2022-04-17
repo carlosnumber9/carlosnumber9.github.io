@@ -10,7 +10,7 @@ export function MainLayout() {
     return (
         <>
             <Layout className='site-layout-content'>
-                <Header style={{ backgroundColor: 'white', display: 'flex', justifyContent: 'center' }}>
+                <Header style={{ backgroundColor: 'white', textAlign: 'center'}}>
                     <h1> Carlos Pinedo Sánchez </h1>
                 </Header>
                 <Content>
@@ -18,7 +18,7 @@ export function MainLayout() {
                     <Navbar></Navbar>
                 </Content>
                 <Footer style={FOOTER_STYLE}>
-          Carlos Pinedo Sánchez ©2018 Created by Ant UED
+                    Carlos Pinedo Sánchez ©2018 Created by Ant UED
                 </Footer>
             </Layout>
         </>
