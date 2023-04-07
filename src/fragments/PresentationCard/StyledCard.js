@@ -7,19 +7,17 @@ export const StyledCard = styled.div`
     }
   }
 
-  .presentation-card {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: space-around;
-    margin-top: 30px;
-    padding: 10px;
-    width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  margin-top: 30px;
+  padding: 10px;
+  width: 50wv;
 
-    -webkit-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-    -moz-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-    box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-  }
+  -webkit-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
+  -moz-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
+  box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
 
   .card-column {
     display: grid;
@@ -45,18 +43,18 @@ export const StyledCard = styled.div`
     margin: none;
     padding: none;
     width: 100%;
-  }
 
-  .card-hr hr {
-    text-align: left;
-    border-top: 1px solid rgb(199, 199, 199);
-    border-left: transparent;
-    border-right: transparent;
-    border-bottom: transparent;
-    width: 70%;
-    border-width: 1px;
-    margin-right: 0;
-    margin-left: 0;
+    hr {
+      text-align: left;
+      border-top: 1px solid rgb(199, 199, 199);
+      border-left: transparent;
+      border-right: transparent;
+      border-bottom: transparent;
+      width: 70%;
+      border-width: 1px;
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 
   #age-icon {
@@ -122,12 +120,4 @@ export const StyledCard = styled.div`
   .second-column * {
     margin: 3px;
   }
-
-  /* .first-column {
-  border: 1px solid black;
-}
-
-.first-column * {
-  border: 1px solid black;
-} */
 `;

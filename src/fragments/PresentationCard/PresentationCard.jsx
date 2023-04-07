@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { StyledCard } from './StyledCard';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import PropTypes from 'prop-types';
 
 export const PresentationCard = () => (
@@ -48,12 +48,12 @@ export const PresentationCard = () => (
           href="https://www.linkedin.com/in/carlos-pinedo-s%C3%A1nchez-b661a7130/"
           target="blank"
         >
-          <FontAwesomeIcon style={{ fontSize: '2rem' }} icon={faLink} />
+          <FontAwesomeIcon icon={faLinkedin} size={'3x'}/>
         </a>
       </span>
       <span id="github-logo">
         <a href="https://www.github.com/carlosnumber9" target="blank">
-          <FontAwesomeIcon style={{ fontSize: '2rem' }} icon={faLink} />
+          <FontAwesomeIcon icon={faGithub} size={'3x'}/>
         </a>
       </span>
     </div>
