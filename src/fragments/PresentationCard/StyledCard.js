@@ -111,16 +111,6 @@ export const StyledCard = styled.div`
     grid-column: 1 / 3;
   }
 
-  #address-icon {
-    grid-row: 7 / 8;
-    grid-column: 1 / 2;
-  }
-
-  #address-text {
-    grid-row: 7 / 8;
-    grid-column: 2 / 3;
-  }
-
   .second-column {
     display: flex;
     flex-direction: column;

@@ -5,7 +5,6 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import PropTypes from 'prop-types';
 import { differenceInSeconds } from 'date-fns';
 import {
-  faHome,
   faInbox,
   faMobile,
   faSeedling,
@@ -48,15 +47,6 @@ export const PresentationCard = () => {
         <div className="card-hr" id="third-hr">
           <hr />
         </div>
-        <FontAwesomeIcon icon={faHome} size={'lg'} id="address-icon" />
-        <span id="address-text">
-          <div className="simple-list">
-            <a href="https://goo.gl/maps/5x5kSMoPtA2Lbxf59" target="blank">
-              <span className="card-text">Calle Rueza 42, 3ºB</span>
-            </a>
-            <span className="card-text">28011 Madrid, España </span>
-          </div>
-        </span>
       </div>
       <div className="card-column second-column">
         <span id="linkedin-button" className="card-element">
