@@ -1,6 +1,29 @@
 import styled from 'styled-components';
 
 export const MainColumn = styled.div`
+  @media only screen and (min-width: 980px) {
+    width: 980px;
+
+    .site-name {
+      font-size: 2.8vw;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 980px) {
+    width: 70vw;
+
+    .site-name {
+      font-size: 4vw;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100vw;
+
+    .site-name {
+      font-size: 2.5ch;
+    }
+  }
   position: absolute;
   top: 0;
   left: 0;

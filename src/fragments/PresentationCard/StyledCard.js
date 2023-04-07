@@ -1,9 +1,18 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.div`
+  @media only screen and (min-width: 980px) {
+    width: 500px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 980px) {
+    width: 350px;
+  }
+
   @media only screen and (max-width: 600px) {
+    width: 250px;
     .card-text {
-      font-size: 4.5vw;
+      font-size: 1.1rem;
     }
   }
 
@@ -30,7 +39,7 @@ export const StyledCard = styled.div`
 
   .first-column * {
     margin: auto;
-    padding: 4px;
+    padding: 3px;
   }
 
   .card-hr {
@@ -50,7 +59,7 @@ export const StyledCard = styled.div`
       border-left: transparent;
       border-right: transparent;
       border-bottom: transparent;
-      width: 70%;
+      width: 75%;
       border-width: 1px;
       margin-right: 0;
       margin-left: 0;
