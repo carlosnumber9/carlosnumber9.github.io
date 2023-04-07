@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledCard = () => styled.div`
+export const StyledCard = styled.div`
   @media only screen and (max-width: 600px) {
     .card-text {
       font-size: 4.5vw;

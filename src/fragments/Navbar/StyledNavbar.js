@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 
-export const StyledNavbar = () => styled.div`
-  .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+export const StyledNavbar = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 
-    width: 90%;
+  width: 90%;
 
-    font-family: 'Microsoft Jhenghei', serif;
-    font-weight: lighter;
+  font-family: 'Microsoft Jhenghei', serif;
+  font-weight: lighter;
 
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
+  margin-top: 60px;
+  margin-bottom: 60px;
 
   .navbar-item {
     padding: 5px;

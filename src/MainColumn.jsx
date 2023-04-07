@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MainColumn = () => styled.div`
+export const MainColumn = styled.div`
   position: absolute;
   top: 0;
   left: 0;
