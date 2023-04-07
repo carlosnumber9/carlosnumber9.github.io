@@ -4,6 +4,7 @@ import { StyledCard } from './StyledCard';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import PropTypes from 'prop-types';
 import { differenceInSeconds } from 'date-fns';
+import { faHome, faInbox, faMobile, faSeedling } from '@fortawesome/free-solid-svg-icons';
 
 export const PresentationCard = () => {
   const getAgeInSeconds = () => differenceInSeconds(new Date(), new Date(1995, 6, 21));
@@ -20,14 +21,14 @@ export const PresentationCard = () => {
   return (
     <StyledCard>
       <div className="card-column first-column">
-        <i id="age-icon" className="fas fa-seedling fa-lg"></i>
+        <FontAwesomeIcon icon={faSeedling} size={'lg'} id="age-icon" />
         <span className="card-text" id="age-text">
           {`${age} seconds old`}
         </span>
         <div className="card-hr" id="first-hr">
           <hr />
         </div>
-        <i id="phone-number-icon" className="fas fa-mobile-alt fa-lg"></i>
+        <FontAwesomeIcon icon={faMobile} size={'lg'} id="phone-number-icon" />
         <span className="card-text" id="phone-number-text">
           {' '}
           686637099{' '}
@@ -35,7 +36,7 @@ export const PresentationCard = () => {
         <div className="card-hr" id="second-hr">
           <hr />
         </div>
-        <i id="email-icon" className="fas fa-inbox fa-lg"></i>
+        <FontAwesomeIcon icon={faInbox} size={'lg'} id="email-icon" />
         <span id="email-text">
           <a href="mailto:cpinedocsb@gmail.com">
             <span className="card-text">cpinedocsb@gmail.com</span>
@@ -44,7 +45,7 @@ export const PresentationCard = () => {
         <div className="card-hr" id="third-hr">
           <hr />
         </div>
-        <i id="address-icon" className="fas fa-home fa-lg"></i>
+        <FontAwesomeIcon icon={faHome} size={'lg'} id="address-icon" />
         <span id="address-text">
           <div className="simple-list">
             <a href="https://goo.gl/maps/UwHnwr36bGWxSaPX7" target="blank">
