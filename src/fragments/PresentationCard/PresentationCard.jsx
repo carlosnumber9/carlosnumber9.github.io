@@ -12,7 +12,7 @@ import {
 
 export const PresentationCard = () => {
   const getAgeInSeconds = () =>
-    differenceInSeconds(new Date(), new Date(1995, 6, 21));
+    differenceInSeconds(new Date(), new Date(1995, 6, 21)).toLocaleString();
   const [age, setAge] = useState(getAgeInSeconds());
 
   useEffect(() => {
