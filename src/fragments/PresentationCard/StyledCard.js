@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledCard = styled.div`
   @media only screen and (min-width: 980px) {
-    width: 500px;
+    width: 350px;
   }
 
   @media only screen and (min-width: 600px) and (max-width: 980px) {
@@ -14,12 +14,13 @@ export const StyledCard = styled.div`
     .card-text {
       font-size: 1.1rem;
     }
+    justify-content: center;
   }
 
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 30px;
   padding: 10px;
   width: 50wv;
@@ -59,7 +60,7 @@ export const StyledCard = styled.div`
       border-left: transparent;
       border-right: transparent;
       border-bottom: transparent;
-      width: 75%;
+      width: 95%;
       border-width: 1px;
       margin-right: 0;
       margin-left: 0;
@@ -104,11 +105,6 @@ export const StyledCard = styled.div`
   #email-text {
     grid-row: 5 / 6;
     grid-column: 2 / 3;
-  }
-
-  #third-hr {
-    grid-row: 6 / 7;
-    grid-column: 1 / 3;
   }
 
   .second-column {

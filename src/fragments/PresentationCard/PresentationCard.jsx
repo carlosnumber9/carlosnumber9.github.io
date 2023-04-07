@@ -44,9 +44,6 @@ export const PresentationCard = () => {
             <span className="card-text">cpinedocsb@gmail.com</span>
           </a>
         </span>
-        <div className="card-hr" id="third-hr">
-          <hr />
-        </div>
       </div>
       <div className="card-column second-column">
         <span id="linkedin-button" className="card-element">
