@@ -10,7 +10,7 @@ export const MainColumn = styled.div`
   }
 
   @media only screen and (min-width: 600px) and (max-width: 980px) {
-    width: 70vw;
+    width: 85vw;
 
     .site-name {
       font-size: 4vw;
