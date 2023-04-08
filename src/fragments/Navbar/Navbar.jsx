@@ -8,7 +8,6 @@ const SectionButton = ({ section, onClick, selected }) => (
   <div
     className={`navbar-item ${selected ? 'selected' : ''}`}
     onClick={onClick}
-    key={section.key}
   >
     <span className="navbar-item-title"> {`${section.name}`} </span>
     <FontAwesomeIcon className="section-icon" icon={section.icon} size="2xl" />
@@ -18,15 +17,15 @@ const SectionButton = ({ section, onClick, selected }) => (
 export function Navbar({ onSectionSelect, selectedSection }) {
   return (
     <StyledNavbar>
-      {SECTIONS.map((section) => (
-        <div key={section.id}>
-          <div className="vertical-separator"></div>
+      {SECTIONS.map((section, i) => (
+        <>
+          {i !== 0 && <div className="vertical-separator"></div>}
           <SectionButton
             section={section}
             onClick={() => onSectionSelect(section)}
             selected={selectedSection.id === section.id}
           />
-        </div>
+        </>
       ))}
     </StyledNavbar>
   );

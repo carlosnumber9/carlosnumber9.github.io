@@ -3,20 +3,15 @@ import styled from 'styled-components';
 export const StyledNavbar = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-
   width: 90%;
-
-  font-family: 'Microsoft Jhenghei', serif;
   font-weight: lighter;
-
   margin-top: 60px;
   margin-bottom: 60px;
 
   .navbar-item {
-    padding: 5px;
-
+    padding: 15px 25px 15px 25px;
     transition: 0.2s ease-in-out;
   }
 
@@ -26,16 +21,8 @@ export const StyledNavbar = styled.div`
     border-right: 1px solid gray;
   }
 
-  .navbar-item:hover {
-    -webkit-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-    -moz-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-    box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-
-    cursor: pointer;
-  }
-
   @media only screen and (min-width: 980px) {
-    .navbar-item-icon {
+    .section-icon {
       display: none;
     }
 
@@ -46,13 +33,30 @@ export const StyledNavbar = styled.div`
     .vertical-separator {
       display: unset;
     }
+
+    .navbar-item {
+      &.selected {
+        box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.024),
+          0px 10px 10px rgba(0, 0, 0, 0.035),
+          0px 24.1px 24.1px rgba(0, 0, 0, 0.046),
+          0px -3.6px 3.6px rgba(0, 0, 0, 0.024),
+          0px -10px 10px rgba(0, 0, 0, 0.035),
+          0px -24.1px 24.1px rgba(0, 0, 0, 0.046);
+      }
+
+      &:hover {
+        box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.024),
+          0px 10px 10px rgba(0, 0, 0, 0.035),
+          0px 24.1px 24.1px rgba(0, 0, 0, 0.046),
+          0px -3.6px 3.6px rgba(0, 0, 0, 0.024),
+          0px -10px 10px rgba(0, 0, 0, 0.035),
+          0px -24.1px 24.1px rgba(0, 0, 0, 0.046);
+        cursor: pointer;
+      }
+    }
   }
 
   @media only screen and (min-width: 600px) and (max-width: 980px) {
-    .navbar-item-icon {
-      display: unset;
-    }
-
     .navbar-item-title {
       display: none;
     }
@@ -63,10 +67,6 @@ export const StyledNavbar = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    .navbar-item-icon {
-      display: unset;
-    }
-
     .navbar-item-title {
       display: none;
     }
