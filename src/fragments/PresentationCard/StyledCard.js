@@ -115,4 +115,8 @@ export const StyledCard = styled.div`
   .second-column * {
     margin: 3px;
   }
+
+  .card-icon {
+    color: black;
+  }
 `;
