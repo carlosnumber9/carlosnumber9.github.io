@@ -21,6 +21,10 @@ export const StyledNavbar = styled.div`
     border-right: 1px solid gray;
   }
 
+  .section-icon {
+    cursor: pointer;
+  }
+
   @media only screen and (min-width: 980px) {
     .section-icon {
       display: none;
