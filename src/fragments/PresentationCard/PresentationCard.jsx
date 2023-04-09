@@ -51,12 +51,12 @@ export const PresentationCard = () => {
             href="https://www.linkedin.com/in/carlos-pinedo-s%C3%A1nchez-b661a7130/"
             target="blank"
           >
-            <FontAwesomeIcon icon={faLinkedin} size={'3x'} />
+            <FontAwesomeIcon icon={faLinkedin} size={'3x'} className={'card-icon'} />
           </a>
         </span>
         <span id="github-logo">
           <a href="https://www.github.com/carlosnumber9" target="blank">
-            <FontAwesomeIcon icon={faGithub} size={'3x'} />
+            <FontAwesomeIcon icon={faGithub} size={'3x'} className={'card-icon'} />
           </a>
         </span>
       </div>
