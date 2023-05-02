@@ -43,6 +43,9 @@
     ]
   },
   "devDependencies": {
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@mui/material": "^5.12.2",
     "date-fns": "^2.29.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
