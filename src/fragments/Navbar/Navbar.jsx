@@ -4,9 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StyledNavbar } from './StyledNavbar';
 import PropTypes from 'prop-types';
 
-const SectionButton = ({ section, onClick, selected }) => (
+const SectionButton = ({ section, onClick, selected, hasBorderRight }) => (
   <div
-    className={`navbar-item ${selected ? 'selected' : ''}`}
+    className={`navbar-item ${selected ? 'selected' : ''} ${
+      hasBorderRight ? 'border-right' : ''
+    }`}
     onClick={onClick}
   >
     <span className="navbar-item-title"> {`${section.name}`} </span>
@@ -18,14 +20,13 @@ export function Navbar({ onSectionSelect, selectedSection }) {
   return (
     <StyledNavbar>
       {SECTIONS.map((section, i) => (
-        <>
-          {i !== 0 && <div className="vertical-separator"></div>}
-          <SectionButton
-            section={section}
-            onClick={() => onSectionSelect(section)}
-            selected={selectedSection.id === section.id}
-          />
-        </>
+        <SectionButton
+          section={section}
+          onClick={() => onSectionSelect(section)}
+          selected={selectedSection.id === section.id}
+          key={section.id}
+          hasBorderRight={i !== SECTIONS.length - 1}
+        />
       ))}
     </StyledNavbar>
   );
@@ -40,4 +41,5 @@ SectionButton.propTypes = {
   section: PropTypes.object,
   selected: PropTypes.bool,
   onClick: PropTypes.func,
+  hasBorderRight: PropTypes.bool,
 };
