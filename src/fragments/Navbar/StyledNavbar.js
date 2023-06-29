@@ -39,10 +39,6 @@ export const StyledNavbar = styled.div`
           box-shadow: 1em 0 1em -1em rgba(0, 0, 0, 0.5),
             -1em 0 1em -1em rgba(0, 0, 0, 0.5);
         }
-
-        &.border-right {
-          border-right: 1px solid lightgray;
-        }
       }
     }
 
