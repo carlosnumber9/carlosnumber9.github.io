@@ -11,9 +11,8 @@ export const StyledSection = styled.section`
   padding: 10px;
   width: 80%;
 
-  -webkit-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-  -moz-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-  box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
+  box-shadow: 0 1em 1em -1em rgba(0, 0, 0, 0.5),
+  0 -1em 1em -1em rgba(0, 0, 0, 0.5);
 
   margin-bottom: 30px;
 
