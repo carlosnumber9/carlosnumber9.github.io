@@ -25,8 +25,7 @@ export const PresentationCard = () => {
   }, []);
 
   return (
-    <>
-      <StyledCard>
+    <StyledCard>
         <div className="card-column first-column">
           <FontAwesomeIcon icon={faSeedling} size={'lg'} id="age-icon" />
           <Tooltip
@@ -78,7 +77,6 @@ export const PresentationCard = () => {
           </span>
         </div>
       </StyledCard>
-    </>
   );
 };
 

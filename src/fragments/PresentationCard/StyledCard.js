@@ -70,11 +70,13 @@ export const StyledCard = styled.div`
   #age-icon {
     grid-row: 1 / 2;
     grid-column: 1/ 2;
+    cursor: pointer;
   }
 
   #age-text {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
+    cursor: pointer;
   }
 
   #first-hr {

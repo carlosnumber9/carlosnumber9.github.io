@@ -10,7 +10,7 @@ export const MainLayout = () => {
   return (
     <MainColumn>
       <h1 className="site-name">Carlos Pinedo Sánchez</h1>
-      <h3 className="site-subtitle">Junior web developer</h3>
+      <h3 className="site-subtitle">Frontend developer</h3>
       <PresentationCard />
       <Navbar
         onSectionSelect={onSectionSelect}

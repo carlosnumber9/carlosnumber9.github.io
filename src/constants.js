@@ -1,14 +1,10 @@
 import {
-  faHandSpock,
-  faCrosshairs,
   faGraduationCap,
   faBriefcase,
   faLaptopCode,
   faProjectDiagram,
 } from '@fortawesome/free-solid-svg-icons';
 import {
-  CareerGoals,
-  Introduction,
   AcademicBackground,
   Experience,
   Skills,
@@ -16,18 +12,6 @@ import {
 } from './sections';
 
 export const SECTIONS = [
-  {
-    id: 'introduction',
-    name: 'Introduction',
-    icon: faHandSpock,
-    component: Introduction,
-  },
-  {
-    id: 'career-goals',
-    name: 'Career goals',
-    icon: faCrosshairs,
-    component: CareerGoals,
-  },
   {
     id: 'academic-background',
     name: 'Academic background',
