@@ -1,0 +1,37 @@
+import {
+  faGraduationCap,
+  faBriefcase,
+  faLaptopCode,
+  faProjectDiagram,
+  IconDefinition,
+} from '@fortawesome/free-solid-svg-icons';
+import { AcademicBackground, Experience, Skills, Projects } from './sections';
+
+export interface Section {
+  id: string;
+  name: string;
+  icon: IconDefinition;
+  component: React.FC;
+}
+
+export const SECTIONS = [
+  {
+    id: 'academic-background',
+    name: 'Academic background',
+    icon: faGraduationCap,
+    component: AcademicBackground,
+  },
+  {
+    id: 'experience',
+    name: 'Experiencie',
+    icon: faBriefcase,
+    component: Experience,
+  },
+  { id: 'skills', name: 'Skills', icon: faLaptopCode, component: Skills },
+  {
+    id: 'projects',
+    name: 'Projects',
+    icon: faProjectDiagram,
+    component: Projects,
+  },
+];
