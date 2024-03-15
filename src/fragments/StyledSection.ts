@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   align-content: space-around;
   justify-content: space-around;
   align-items: center;
   margin-top: 30px;
   padding: 10px;
+  gap: 20px;
   width: 80%;
 
   box-shadow: 0 1em 1em -1em rgba(0, 0, 0, 0.5),
