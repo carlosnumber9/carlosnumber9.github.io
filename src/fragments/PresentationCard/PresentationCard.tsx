@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyledCard } from './StyledCard';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import PropTypes from 'prop-types';
 import { differenceInSeconds } from 'date-fns';
 import {
   faInbox,
@@ -11,12 +10,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from '@mui/material';
 
-export const PresentationCard = () => {
+export const PresentationCard: React.FC = () => {
   const getAgeInSeconds = () =>
     differenceInSeconds(new Date(), new Date(1995, 6, 21));
   const [age, setAge] = useState(getAgeInSeconds());
 
-  const getAgeInYears = (ageInSeconds) => Math.floor(ageInSeconds / (60 * 60 * 24 * 365.25));
+  const getAgeInYears = (ageInSeconds: number) => Math.floor(ageInSeconds / (60 * 60 * 24 * 365.25));
 
   useEffect(() => {
     const interval = setInterval(() => setAge(getAgeInSeconds()), 1000);
@@ -78,8 +77,4 @@ export const PresentationCard = () => {
         </div>
       </StyledCard>
   );
-};
-
-PresentationCard.propTypes = {
-  selectedSection: PropTypes.object,
 };

@@ -2,7 +2,7 @@ import { StyledSkill } from './StyledSkill';
 import { skills } from './skillsList';
 import { Tooltip } from '@mui/material';
 
-export const Skills = () =>
+export const Skills: React.FC = () =>
   skills.map((skill) => (
     <Tooltip placement="top" title={skill.name} key={skill.id}>
       <a href={skill.anchor} target="_blank">

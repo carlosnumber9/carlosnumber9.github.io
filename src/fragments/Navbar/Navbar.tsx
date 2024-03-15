@@ -1,20 +1,37 @@
 import React from 'react';
-import { SECTIONS } from '../../constants';
+import { SECTIONS, Section } from '../../constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StyledNavbar } from './StyledNavbar';
-import PropTypes from 'prop-types';
 
-const SectionButton = ({ section, onClick, selected }) => (
-  <div
+interface SectionButtonProps {
+  section: Section;
+  onClick: () => void;
+  selected: boolean;
+}
+
+interface NavbarProps {
+  onSectionSelect: (section: Section) => void;
+  selectedSection: Section;
+}
+
+const SectionButton: React.FC<SectionButtonProps> = ({
+  section,
+  onClick,
+  selected,
+}) => (
+  <button
     className={`navbar-item ${selected ? 'selected' : ''}`}
     onClick={onClick}
   >
     <span className="navbar-item-title"> {`${section.name}`} </span>
     <FontAwesomeIcon className="section-icon" icon={section.icon} size="2xl" />
-  </div>
+  </button>
 );
 
-export function Navbar({ onSectionSelect, selectedSection }) {
+export const Navbar: React.FC<NavbarProps> = ({
+  onSectionSelect,
+  selectedSection,
+}) => {
   return (
     <StyledNavbar>
       {SECTIONS.map((section) => (
@@ -27,15 +44,4 @@ export function Navbar({ onSectionSelect, selectedSection }) {
       ))}
     </StyledNavbar>
   );
-}
-
-Navbar.propTypes = {
-  onSectionSelect: PropTypes.func,
-  selectedSection: PropTypes.object,
-};
-
-SectionButton.propTypes = {
-  section: PropTypes.object,
-  selected: PropTypes.bool,
-  onClick: PropTypes.func,
 };
