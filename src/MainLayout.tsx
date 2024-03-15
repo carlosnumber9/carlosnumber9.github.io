@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { SECTIONS } from './constants';
+import { SECTIONS, Section } from './constants';
 import { Navbar, PresentationCard, StyledSection } from './fragments';
 import { MainColumn } from './MainColumn';
 
 export const MainLayout = () => {
-  const [selectedSection, setSelectedSection] = useState(SECTIONS[0]);
-  const onSectionSelect = (section) => setSelectedSection(section);
+  const [selectedSection, setSelectedSection] = useState<Section>(SECTIONS[0]);
+  const onSectionSelect = (section: Section) => setSelectedSection(section);
 
   return (
     <MainColumn>
