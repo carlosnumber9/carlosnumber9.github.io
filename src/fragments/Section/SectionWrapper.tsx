@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { DEFAULT_FLEX_CONTAINER_STYLES } from '../constants';
+import { DEFAULT_FLEX_CONTAINER_STYLES } from '../../constants';
 
 interface Props {
   children: React.ReactNode;
