@@ -35,3 +35,12 @@ export const SECTIONS = [
     component: Projects,
   },
 ];
+
+export const DEFAULT_FLEX_CONTAINER_STYLES = {
+  display: 'flex',
+  alignContent: 'space-around',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  padding: '10px',
+  gap: '20px',
+};

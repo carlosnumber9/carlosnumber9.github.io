@@ -15,19 +15,4 @@ export const StyledSection = styled.section`
   0 -1em 1em -1em rgba(0, 0, 0, 0.5);
 
   margin-bottom: 30px;
-
-  .section-title {
-    color: rgb(75, 75, 75);
-    margin-left: 0;
-
-    font-weight: lighter;
-  }
-
-  .section * {
-    display: none;
-  }
-
-  .main-content {
-    text-align: justify;
-  }
 `;

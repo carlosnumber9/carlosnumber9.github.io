@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { SECTIONS, Section } from './constants';
-import { Navbar, PresentationCard, StyledSection } from './fragments';
+import {
+  Navbar,
+  PresentationCard,
+} from './fragments';
 import { MainColumn } from './MainColumn';
+import { SectionWrapper } from './fragments/SectionWrapper';
 
 export const MainLayout = () => {
   const [selectedSection, setSelectedSection] = useState<Section>(SECTIONS[0]);
@@ -16,9 +20,9 @@ export const MainLayout = () => {
         onSectionSelect={onSectionSelect}
         selectedSection={selectedSection}
       />
-      <StyledSection>
+      <SectionWrapper>
         <selectedSection.component />
-      </StyledSection>
+      </SectionWrapper>
     </MainColumn>
   );
 };
