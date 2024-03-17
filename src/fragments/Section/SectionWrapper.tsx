@@ -29,7 +29,9 @@ export const SectionWrapper: React.FC<Props> = ({ children }) => {
             ' 0 1em 1em -1em rgba(0, 0, 0, 0.5), 0 -1em 1em -1em rgba(0, 0, 0, 0.5)',
         }}
       >
-        <div ref={ref}>{children}</div>
+        <div ref={ref} style={{ width: '100%' }}>
+          {children}
+        </div>
       </motion.div>
     </AnimatePresence>
   );

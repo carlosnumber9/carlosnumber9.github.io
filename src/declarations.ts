@@ -6,3 +6,11 @@ export interface Section {
   icon: IconDefinition;
   component: React.FC;
 }
+
+export interface Era {
+  id: string;
+  center: string;
+  title: string;
+  subtitle?: string;
+  image: string;
+}
