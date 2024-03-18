@@ -14,3 +14,10 @@ export interface Era {
   subtitle?: string;
   image: string;
 }
+
+export interface Repository {
+  id: string;
+  name: string;
+  description: string;
+  'html_url': string;
+}

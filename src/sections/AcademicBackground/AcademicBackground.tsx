@@ -14,7 +14,7 @@ export const AcademicBackground: React.FC = () => (
       style={{ ...DEFAULT_FLEX_CONTAINER_STYLES, flexDirection: 'column' }}
     >
       {eras.map((era: Era) => (
-        <StyledEra era={era}>
+        <StyledEra era={era} key={era.id}>
           <h3 style={{ marginLeft: '20px' }}>{era.center}</h3>
           <h4 style={{ marginLeft: '20px', color: 'gray' }}>
             {era.title} | {era.subtitle}

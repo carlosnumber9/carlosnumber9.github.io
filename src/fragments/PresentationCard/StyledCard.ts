@@ -121,4 +121,11 @@ export const StyledCard = styled.div`
   .card-icon {
     color: black;
   }
+
+  a {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
 `;

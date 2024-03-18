@@ -3,12 +3,12 @@ import {
   faBriefcase,
   faLaptopCode,
   faProjectDiagram,
-  IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 import { AcademicBackground, Experience, Skills, Projects } from './sections';
+import { Section } from './declarations';
 
 
-export const SECTIONS = [
+export const SECTIONS: Section[] = [
   {
     id: 'academic-background',
     name: 'Academic background',
@@ -38,3 +38,5 @@ export const DEFAULT_FLEX_CONTAINER_STYLES = {
   padding: '10px',
   gap: '20px',
 };
+
+export const MIN_SECTION_HEIGHT = 80;

@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { DEFAULT_FLEX_CONTAINER_STYLES } from '../../constants';
+import {
+  DEFAULT_FLEX_CONTAINER_STYLES,
+  MIN_SECTION_HEIGHT,
+} from '../../constants';
 
 interface Props {
   children: React.ReactNode;
@@ -11,15 +14,32 @@ export const SectionWrapper: React.FC<Props> = ({ children }) => {
   const [height, setHeight] = useState<number>(0);
 
   useEffect(() => {
-    setHeight(ref?.current?.offsetHeight ?? 0);
-  }, [children]);
+    // Ensure this runs after the content has been rendered
+    const updateHeight = () => {
+      const newHeight = ref.current?.offsetHeight ?? MIN_SECTION_HEIGHT;
+      setHeight(newHeight);
+    };
+
+    // Initial measurement
+    updateHeight();
+
+    // Re-measure if the content changes
+    const observer = new MutationObserver(updateHeight);
+    if (ref.current) {
+      observer.observe(ref.current, { childList: true, subtree: true });
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+ }, [children]);
 
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ height: 0 }}
+        initial={{ height: MIN_SECTION_HEIGHT }}
         animate={{ height }}
-        exit={{ height: 0 }}
+        exit={{ height: MIN_SECTION_HEIGHT }}
         transition={{ duration: 0.3, ease: 'easeIn' }}
         style={{
           ...DEFAULT_FLEX_CONTAINER_STYLES,
