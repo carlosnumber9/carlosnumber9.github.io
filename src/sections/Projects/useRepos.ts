@@ -5,7 +5,7 @@ export const useRepos = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [repos, setRepos] = useState<Repository[]>([]);
 
-  const fetchUserRepos = async () => {
+  const getRepos = async () => {
     setLoading(true);
     await fetch('/.netlify/functions/github')
       .then(async (response) => {
@@ -20,7 +20,7 @@ export const useRepos = () => {
 
   useEffect(() => {
     if (!loading && repos.length < 1) {
-      fetchUserRepos();
+      getRepos();
     }
   }, [loading]);
 
