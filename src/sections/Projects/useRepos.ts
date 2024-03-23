@@ -19,14 +19,10 @@ export const useRepos = () => {
   };
 
   useEffect(() => {
-    if (!loading) {
+    if (!loading && repos.length < 1) {
       fetchUserRepos();
     }
   }, [loading]);
-
-  if (loading) {
-    throw fetchUserRepos(); // Throw the promise to be caught by Suspense
-  }
 
   return { loading, repos };
 };
