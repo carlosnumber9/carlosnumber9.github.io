@@ -3,6 +3,17 @@
   publish = "dist"
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  force = true
+  from = '/api/*'
   status = 200
+  to = '/.netlify/functions/:splat'
+
+[[redirects]]
+  from = "/*"
+  status = 200
+  to = "/index.html"
+
+[dev]
+  autoLaunch = false
+  targetPort = 5173
+  functions = "api"
