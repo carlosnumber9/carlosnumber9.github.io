@@ -19,4 +19,5 @@ export default defineConfig({
     port: 3001,
     open: '/public/index.html',
   },
+  publicDir: 'public',
 });
