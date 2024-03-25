@@ -19,5 +19,4 @@ export default defineConfig({
     port: 3001,
     open: '/public/index.html',
   },
-  base: '/carlosnumber9.github.io/',
 });
