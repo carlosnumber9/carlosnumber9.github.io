@@ -7,7 +7,7 @@ export const useRepos = () => {
 
   const getRepos = async () => {
     setLoading(true);
-    await fetch('/.netlify/functions/github')
+    await fetch(import.meta.env.VITE_API_URL)
       .then(async (response) => {
         const data = await response.json();
         setRepos(data.filter((repo: any) => repo.topics.includes('showcase')));
