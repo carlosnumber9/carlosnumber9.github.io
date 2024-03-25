@@ -6,19 +6,19 @@ export const eras: Era[] = [
     center: 'Universidad Politécnica de Madrid',
     title: 'Samsung - UPM courses',
     subtitle: 'Web development',
-    image: '/courses.jpg',
+    image: '/assets/courses.jpg',
   },
   {
     id: 'university',
     center: 'Universidad Politécnica de Madrid',
     title: 'Computer Science Engineering',
-    image: '/university.jpg',
+    image: '/assets/university.jpg',
   },
   {
     id: 'school',
     center: 'Colegio San Buenaventura',
     title: 'High School Graduate',
     subtitle: 'Technology and Technical drawing',
-    image: '/sanbuenaventura.jpg',
+    image: '/assets/sanbuenaventura.jpg',
   },
 ];
