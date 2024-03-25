@@ -15,9 +15,5 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
-  server: {
-    port: 3001,
-    open: '/public/index.html',
-  },
   publicDir: 'public',
 });
