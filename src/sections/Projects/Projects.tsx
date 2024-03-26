@@ -35,6 +35,7 @@ export const Projects = () => {
               href={repo['html_url']}
               target="_blank"
               style={{ width: '100%' }}
+              key={repo.id}
             >
               <StyledProject key={repo.id}>
                 <h3 style={{ marginLeft: '20px' }}>{repo.name}</h3>
