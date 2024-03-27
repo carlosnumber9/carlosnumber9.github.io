@@ -17,7 +17,7 @@ export const SECTIONS: Section[] = [
   },
   {
     id: 'experience',
-    name: 'Experiencie',
+    name: 'Experience',
     icon: faBriefcase,
     component: Experience,
   },

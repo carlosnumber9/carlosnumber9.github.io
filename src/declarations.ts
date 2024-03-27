@@ -15,6 +15,15 @@ export interface Era {
   image: string;
 }
 
+export interface Job {
+  id: string;
+  company: string;
+  title: string;
+  features: string[];
+  dateStart: string;
+  dateEnd: string;
+}
+
 export interface Repository {
   id: string;
   name: string;

@@ -1,7 +1,8 @@
 import React from 'react';
-import { SECTIONS, Section } from '../../constants';
+import { SECTIONS } from '../../constants';
 import { StyledNavbar } from './StyledNavbar';
 import { SectionButton } from './SectionButton';
+import { Section } from '../../declarations';
 
 interface Props {
   onSectionSelect: (section: Section) => void;
