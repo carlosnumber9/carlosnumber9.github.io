@@ -12,12 +12,21 @@ export const StyledEra = styled.div<Props>`
   ${({ era }) => css`
     background: linear-gradient(
         to right,
-        rgba(255, 255, 255, 1) 50%,
-        transparent 100%
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 1),
+        transparent,
+        transparent
       ),
       url('${era.image}');
   `}
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    width: 98%;
+    cursor: pointer;
+  }
 `;
