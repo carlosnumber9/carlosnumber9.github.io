@@ -40,3 +40,4 @@ export const DEFAULT_FLEX_CONTAINER_STYLES = {
 };
 
 export const MIN_SECTION_HEIGHT = 80;
+export const DEFAULT_LOAD_TIME = 500;

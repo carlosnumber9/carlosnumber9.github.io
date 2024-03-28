@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledJob = styled.div`
-  width: 40%;
+  min-width: 200px;
 
   display: flex;
   flex-direction: column;
