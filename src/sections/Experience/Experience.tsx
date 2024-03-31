@@ -1,10 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Job } from '../../declarations';
-import { StyledJob } from './StyledJob';
+import { StyledJobInfo } from './StyledJobInfo';
 import { Timeline } from './TimeLine';
 import { jobs } from './jobs';
 import { useDelay } from '../../useDelay';
 import { Loader } from '../../fragments';
+import { StyledBadge } from './StyledBadge';
+import { StyledJob } from './StyledJob';
 
 export const Experience = () => {
   const isReady = useDelay();
@@ -19,16 +21,35 @@ export const Experience = () => {
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
-          minWidth: '450px',
+          minWidth: '80%',
+          alignItems: 'center',
         }}
       >
         {jobs.map((job: Job) => (
           <StyledJob key={job.id}>
-            <hr />
-            <span>{`${job.dateStart}-${job.dateEnd}`}</span>
-            <h3>{job.company}</h3>
-            <h4> {job.title}</h4>
-            <hr />
+            <div
+              style={{
+                width: '50%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                flexWrap: 'wrap'
+              }}
+              className="features"
+            >
+              {job.features.map((feature: string) => (
+                <StyledBadge key={`feature_${feature}`} className="feature">
+                  {feature}
+                </StyledBadge>
+              ))}
+            </div>
+            <StyledJobInfo href={job.url} target="_blank" className="info">
+              <hr />
+              <span>{`${job.dateStart}-${job.dateEnd}`}</span>
+              <h3>{job.company}</h3>
+              <h4> {job.title}</h4>
+              <hr />
+            </StyledJobInfo>
           </StyledJob>
         ))}
         <Timeline />

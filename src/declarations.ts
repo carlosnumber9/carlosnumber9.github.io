@@ -22,6 +22,7 @@ export interface Job {
   features: string[];
   dateStart: string;
   dateEnd: string;
+  url: string;
 }
 
 export interface Repository {
