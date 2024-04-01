@@ -9,4 +9,5 @@ export const StyledNavbar = styled.div`
     font-weight: lighter;
     margin-top: 60px;
     margin-bottom: 60px;
+    color: black;
 `;

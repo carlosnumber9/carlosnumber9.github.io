@@ -14,9 +14,9 @@ export const StyledFileButton = styled.div`
   align-items: center;
 
   &:hover .file-icon {
-    transform: scale(1.2);
-    color: red;
-    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+    color: darkred;
+    transition: all 0.1s ease-in-out;
   }
 
   .file-icon {

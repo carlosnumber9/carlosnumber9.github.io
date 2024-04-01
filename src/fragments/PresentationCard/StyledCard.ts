@@ -123,9 +123,14 @@ export const StyledCard = styled.div`
   }
 
   a {
-    color: blue;
+    color: black;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: darkblue;
+    }
+
+    transition: all 0.1s ease-in-out;
   }
 `;
