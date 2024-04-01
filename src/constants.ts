@@ -7,7 +7,6 @@ import {
 import { AcademicBackground, Experience, Skills, Projects } from './sections';
 import { Section } from './declarations';
 
-
 export const SECTIONS: Section[] = [
   {
     id: 'academic-background',
@@ -30,13 +29,13 @@ export const SECTIONS: Section[] = [
   },
 ];
 
-export const DEFAULT_FLEX_CONTAINER_STYLES = {
+export const DEFAULT_FLEX_CONTAINER_STYLES: React.CSSProperties = {
   display: 'flex',
   alignContent: 'space-around',
   justifyContent: 'space-around',
   alignItems: 'center',
-  padding: '10px',
   gap: '20px',
+  flexWrap: 'wrap',
 };
 
 export const MIN_SECTION_HEIGHT = 80;
