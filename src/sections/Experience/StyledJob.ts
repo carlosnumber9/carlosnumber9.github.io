@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledJob = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+  
   width: 100%;
   max-height: 120px;
 
@@ -66,36 +68,19 @@ export const StyledJob = styled.div`
     color: lightgray;
   }
 
-  h3,
-  h4,
-  span {
-    margin: 0;
-  }
-
   &:hover {
+    font-size: 110%;
+
     span {
       color: gray;
     }
 
     .feature {
       visibility: visible;
-      color: white;
     }
-  }
 
-  @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-
-  @media only screen and (min-width: 980px) {
-    &:hover {
-      font-size: 110%;
-      cursor: pointer;
-    }
-  }
-
-  @media only screen and (min-width: 600px) and (max-width: 980px) {
-    &:hover {
-      font-size: 110%;
-      cursor: pointer;
+    & > a {
+      background-color: rgba(1, 1, 1, 0.1);
     }
   }
 `;

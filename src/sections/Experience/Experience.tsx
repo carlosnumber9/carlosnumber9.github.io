@@ -8,6 +8,9 @@ import { Loader } from '../../fragments';
 import { StyledBadge } from './StyledBadge';
 import { StyledJob } from './StyledJob';
 
+const getFeatureURL = (text: string) =>
+  `https://www.google.com/search?q=${text}`;
+
 export const Experience = () => {
   const isReady = useDelay();
   return isReady ? (
@@ -33,13 +36,15 @@ export const Experience = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                flexWrap: 'wrap'
+                flexWrap: 'wrap',
               }}
               className="features"
             >
               {job.features.map((feature: string) => (
                 <StyledBadge key={`feature_${feature}`} className="feature">
-                  {feature}
+                  <a href={getFeatureURL(feature)} target="_blank">
+                    {feature}
+                  </a>
                 </StyledBadge>
               ))}
             </div>

@@ -34,8 +34,4 @@ export const StyledJobInfo = styled.a`
   span {
     margin: 0;
   }
-
-  &:hover {
-    background-color: rgba(1, 1, 1, 0.1);
-  }
 `;
