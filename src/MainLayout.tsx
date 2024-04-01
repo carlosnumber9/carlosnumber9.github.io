@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SECTIONS } from './constants';
-import { Navbar, PresentationCard } from './fragments';
+import { FileButton, Navbar, PresentationCard } from './fragments';
 import { MainColumn } from './MainColumn';
 import { Section } from './declarations';
 
@@ -9,15 +9,18 @@ export const MainLayout = () => {
   const onSectionSelect = (section: Section) => setSelectedSection(section);
 
   return (
-    <MainColumn>
-      <h1 className="site-name">Carlos Pinedo Sánchez</h1>
-      <h3 className="site-subtitle">Frontend developer</h3>
-      <PresentationCard />
-      <Navbar
-        onSectionSelect={onSectionSelect}
-        selectedSection={selectedSection}
-      />
-      <selectedSection.component />
-    </MainColumn>
+    <>
+      <MainColumn>
+        <h1 className="site-name">Carlos Pinedo Sánchez</h1>
+        <h3 className="site-subtitle">Frontend developer</h3>
+        <PresentationCard />
+        <Navbar
+          onSectionSelect={onSectionSelect}
+          selectedSection={selectedSection}
+        />
+        <selectedSection.component />
+      </MainColumn>
+      <FileButton />
+    </>
   );
 };
