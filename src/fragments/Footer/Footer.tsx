@@ -3,7 +3,7 @@ export const Footer: React.FC = () => (
     style={{
       width: '100%',
       height: '120px',
-      position: 'relative',
+      marginTop: 'auto',
     }}
   >
     <span
