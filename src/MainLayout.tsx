@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SECTIONS } from './constants';
-import { FileButton, Navbar, PresentationCard } from './fragments';
+import { FileButton, Footer, Navbar, PresentationCard } from './fragments';
 import { MainColumn } from './MainColumn';
 import { Section } from './declarations';
 
@@ -19,6 +19,7 @@ export const MainLayout = () => {
           selectedSection={selectedSection}
         />
         <selectedSection.component />
+        <Footer />
       </MainColumn>
       <FileButton />
     </>
