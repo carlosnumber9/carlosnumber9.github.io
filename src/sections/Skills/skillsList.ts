@@ -55,4 +55,16 @@ export const skills: Skill[] = [
     icon: '/assets/jest.png',
     anchor: 'https://jestjs.io/',
   },
+  {
+    id: 'graphql',
+    name: 'GraphQL',
+    icon: '/assets/graphql.png',
+    anchor: 'https://graphql.org/',
+  },
+  {
+    id: 'redux',
+    name: 'React Redux',
+    icon: '/assets/redux.png',
+    anchor: 'https://react-redux.js.org/',
+  }
 ];
