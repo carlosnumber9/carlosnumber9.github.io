@@ -2,6 +2,20 @@ import { Job } from '../../declarations';
 
 export const jobs: Job[] = [
   {
+    id: 'napptilus',
+    company: 'Napptilus Tech Labs',
+    title: 'Frontend developer',
+    features: [
+      'react',
+      'javascript',
+      'jest',
+      'redux',
+      'graphql',
+    ],
+    dateStart: 'OCT24',
+    url: 'https://napptilus.com/',
+  },
+  {
     id: 'devo',
     company: 'Devo',
     title: 'Software Engineer',

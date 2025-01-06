@@ -11,6 +11,8 @@ import { StyledJob } from './StyledJob';
 const getFeatureURL = (text: string) =>
   `https://www.google.com/search?q=${text}`;
 
+const getDates = (startDate: string, endDate: string | undefined): string => `${startDate}-${endDate ? endDate : 'NOW'}`;
+
 export const Experience = () => {
   const isReady = useDelay();
   return isReady ? (
@@ -50,7 +52,7 @@ export const Experience = () => {
             </div>
             <StyledJobInfo href={job.url} target="_blank" className="info">
               <hr />
-              <span>{`${job.dateStart}-${job.dateEnd}`}</span>
+              <span>{getDates(job.dateStart, job.dateEnd)}</span>
               <h3>{job.company}</h3>
               <h4> {job.title}</h4>
               <hr />

@@ -21,7 +21,7 @@ export interface Job {
   title: string;
   features: string[];
   dateStart: string;
-  dateEnd: string;
+  dateEnd?: string;
   url: string;
 }
 
