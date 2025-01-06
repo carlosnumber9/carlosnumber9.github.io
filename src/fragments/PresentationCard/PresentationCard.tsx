@@ -55,7 +55,7 @@ export const PresentationCard: React.FC = () => {
         <div className="card-column second-column">
           <span id="linkedin-button" className="card-element">
             <a
-              href="https://www.linkedin.com/in/carlos-pinedo-s%C3%A1nchez-b661a7130/"
+              href="https://www.linkedin.com/in/carlos-pinedo-b661a7130/"
               target="blank"
             >
               <FontAwesomeIcon
