@@ -20,9 +20,9 @@ export const AcademicBackground: React.FC = () => {
       >
         {eras.map((era: Era) => (
           <StyledEra era={era} key={era.id}>
-            <h3 style={{ marginLeft: '20px' }}>{era.center}</h3>
-            <h4 style={{ marginLeft: '20px', color: 'gray' }}>{era.title}</h4>
-            <h4 style={{ marginLeft: '20px', color: 'gray' }}>{era.subtitle}</h4>
+            <h3><span>{era.center}</span></h3>
+            <h4><span>{era.title}</span></h4>
+            {era.subtitle && <h4><span>{era.subtitle}</span></h4>}
           </StyledEra>
         ))}
       </motion.div>

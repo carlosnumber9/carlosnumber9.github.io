@@ -22,11 +22,23 @@ export const StyledEra = styled.div<Props>`
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-
+  padding: 20px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
     width: 98%;
     cursor: pointer;
+  }
+
+  h3, h4 {
+    margin-left: 20px;
+  }
+
+  span {
+    background: rgba(0, 0, 0, 0.6); /* Color opaco */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
   }
 `;
