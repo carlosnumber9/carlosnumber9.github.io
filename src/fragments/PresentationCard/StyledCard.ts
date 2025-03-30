@@ -25,9 +25,9 @@ export const StyledCard = styled.div`
   padding: 10px;
   width: 50wv;
 
-  -webkit-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-  -moz-box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
-  box-shadow: 0px 0px 14px 1px rgba(135, 135, 135, 1);
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(135, 135, 135, 0.5);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(135, 135, 135, 0.5);
+  box-shadow: 0px 0px 6px 1px rgba(135, 135, 135, 0.5);
 
   .card-column {
     display: grid;
@@ -35,7 +35,7 @@ export const StyledCard = styled.div`
 
   .first-column {
     grid-template-columns: 2;
-    grid-template-rows: 7;
+    grid-template-rows: 5;
   }
 
   .first-column * {
@@ -66,46 +66,28 @@ export const StyledCard = styled.div`
       margin-left: 0;
     }
   }
-
-  #age-icon {
+  #phone-number-icon {
     grid-row: 1 / 2;
     grid-column: 1/ 2;
-    cursor: pointer;
-  }
-
-  #age-text {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    cursor: pointer;
-  }
-
-  #first-hr {
-    grid-row: 2 / 3;
-    grid-column: 1 / 3;
-  }
-
-  #phone-number-icon {
-    grid-row: 3 / 4;
-    grid-column: 1 / 2;
   }
 
   #phone-number-text {
-    grid-row: 3 / 4;
+    grid-row: 1/2;
     grid-column: 2 / 3;
   }
 
   #second-hr {
-    grid-row: 4 / 5;
+    grid-row: 2/3;
     grid-column: 1 / 3;
   }
 
   #email-icon {
-    grid-row: 5 / 6;
+    grid-row: 3/3;
     grid-column: 1 / 2;
   }
 
   #email-text {
-    grid-row: 5 / 6;
+    grid-row: 3/3;
     grid-column: 2 / 3;
   }
 
