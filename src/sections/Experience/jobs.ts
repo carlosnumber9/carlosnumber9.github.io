@@ -12,7 +12,7 @@ export const jobs: Job[] = [
       'redux',
       'graphql',
     ],
-    dateStart: 'OCT24',
+    dates: 'OCT24-NOW',
     url: 'https://napptilus.com/',
   },
   {
@@ -29,8 +29,7 @@ export const jobs: Job[] = [
       'highcharts',
       'echarts',
     ],
-    dateStart: 'MAY21',
-    dateEnd: 'FEB24',
+    dates: 'MAY21-FEB24',
     url: 'https://www.devo.com/',
   },
   {
@@ -45,8 +44,7 @@ export const jobs: Job[] = [
       'hibernate',
       'git',
     ],
-    dateStart: 'JUN19',
-    dateEnd: 'MAY21',
+    dates: 'JUN19-MAY21',
     url: 'https://www.exevi.com/',
   },
   {
@@ -61,8 +59,7 @@ export const jobs: Job[] = [
       'structuredCabling',
       'inventory',
     ],
-    dateStart: 'SEP16',
-    dateEnd: 'JUN19',
+    dates: 'SEP16-JUN19',
     url: 'https://www.cesvima.upm.es/',
   },
 ];
