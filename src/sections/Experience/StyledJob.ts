@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledJob = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-  
+
   width: 100%;
   max-height: 120px;
 
@@ -13,6 +13,23 @@ export const StyledJob = styled.div`
 
   text-decoration: none;
   color: inherit;
+
+  span {
+    font-size: 0.85rem; 
+    margin-bottom: 2px;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  h4 {
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #333;
+  }
 
   &:nth-child(odd) {
     align-self: flex-start;

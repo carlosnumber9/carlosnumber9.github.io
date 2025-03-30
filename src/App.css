@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
+.site-name {
+  margin-top: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.site-subtitle {
+  margin-top: 0;
+  color: rgba(75, 75, 75, 0.8);
+  font-weight: 400; 
+  letter-spacing: 0.01em;
+  font-size: 1.1rem;
+}
+
 @media only screen and (min-width: 980px) {
   .main {
     width: 980px;
   }
 
   .site-name {
-    font-size: 2.8vw;
+    font-size: 3rem;
   }
 
   a:hover {
@@ -20,7 +35,7 @@
   }
 
   .site-name {
-    font-size: 4vw;
+    font-size: 2.2rem;
   }
 
   a:hover {
@@ -29,20 +44,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .main {
-    width: 100vw;
-  }
-
   .site-name {
-    font-size: 2.5ch;
+    font-size: 1.8rem;
   }
-}
-
-.site-name {
-  margin-top: 20px;
-}
-
-.site-subtitle {
-  margin-top: 0;
-  color: rgb(75, 75, 75);
+  
+  .site-subtitle {
+    font-size: 1rem;
+  }
 }
