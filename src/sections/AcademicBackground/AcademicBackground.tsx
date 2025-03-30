@@ -20,14 +20,16 @@ export const AcademicBackground: React.FC = () => {
       >
         {eras.map((era: Era) => (
           <StyledEra era={era} key={era.id}>
-            <h3><span>{era.center}</span></h3>
-            <h4><span>{era.title}</span></h4>
-            {era.subtitle && <h4><span>{era.subtitle}</span></h4>}
+            <div>
+              <span className='era-dates'>{era.dates}</span>
+              <span>{era.center}</span>
+              <span>{era.title}</span>
+            </div>
           </StyledEra>
         ))}
-      </motion.div>
-    </AnimatePresence>
+    </motion.div>
+    </AnimatePresence >
   ) : (
-    <Loader />
-  );
+  <Loader />
+);
 };

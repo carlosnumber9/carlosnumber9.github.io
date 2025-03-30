@@ -11,8 +11,8 @@ export interface Era {
   id: string;
   center: string;
   title: string;
-  subtitle?: string;
-  image: string;
+  dates: string;
+  tags?: string[];
 }
 
 export interface Job {
@@ -20,8 +20,7 @@ export interface Job {
   company: string;
   title: string;
   features: string[];
-  dateStart: string;
-  dateEnd?: string;
+  dates: string;
   url: string;
 }
 
