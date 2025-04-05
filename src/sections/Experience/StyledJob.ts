@@ -15,7 +15,7 @@ export const StyledJob = styled.div`
   color: inherit;
 
   span {
-    font-size: 0.85rem; 
+    font-size: 0.85rem;
     margin-bottom: 2px;
   }
 
@@ -31,6 +31,11 @@ export const StyledJob = styled.div`
     color: #333;
   }
 
+  .plus-icon {
+    color: rgba(211, 211, 211, 0.3);
+    transition: all 0.1s ease-in-out;
+  }
+
   &:nth-child(odd) {
     align-self: flex-start;
     justify-content: flex-end;
@@ -41,6 +46,11 @@ export const StyledJob = styled.div`
     }
 
     & > .features {
+      align-items: flex-end;
+      align-content: flex-end;
+    }
+
+    & > .plus {
       align-items: flex-end;
       align-content: flex-end;
     }
@@ -85,19 +95,34 @@ export const StyledJob = styled.div`
     color: lightgray;
   }
 
-  &:hover {
-    font-size: 110%;
+  @media (hover: hover) {
+    &:hover {
+      font-size: 110%;
 
-    span {
-      color: gray;
-    }
+      span {
+        color: gray;
+      }
 
-    .feature {
-      visibility: visible;
-    }
+      .feature {
+        visibility: visible;
+      }
 
-    & > a {
-      background-color: rgba(1, 1, 1, 0.1);
+      & > a {
+        background-color: rgba(1, 1, 1, 0.1);
+      }
     }
+  }
+
+  @media (hover: none) {
+      font-size: 110%;
+      height: auto;
+
+      span {
+        color: gray;
+      }
+
+      .feature {
+        visibility: visible;
+      }
   }
 `;
