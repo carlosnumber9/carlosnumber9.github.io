@@ -1,21 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.div`
-  @media only screen and (min-width: 980px) {
-    width: 350px;
-  }
-
-  @media only screen and (min-width: 600px) and (max-width: 980px) {
-    width: 350px;
-  }
-
-  @media only screen and (max-width: 600px) {
-    width: 250px;
-    .card-text {
-      font-size: 1.1rem;
-    }
-    justify-content: center;
-  }
 
   display: flex;
   flex-wrap: wrap;
@@ -114,5 +99,26 @@ export const StyledCard = styled.div`
     }
 
     transition: all 0.1s ease-in-out;
+  }
+    
+  @media only screen and (min-width: 980px) {
+    width: 350px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 980px) {
+    width: 350px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 250px;
+    .card-text {
+      font-size: 1.1rem;
+    }
+    justify-content: center;
+
+    .second-column {
+    flex-direction: row;
+    margin-top: 10px;
+}
   }
 `;
