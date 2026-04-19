@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
 export const StyledSkill = styled.span`
-  display: inline-block;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   border-radius: 100px;
   border: 1px solid lightgray;
   color: black;
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   &:hover {
     background-color: lightgray;
     color: white;
@@ -16,6 +18,7 @@ export const StyledSkill = styled.span`
   }
 
   .icon {
-    width: 40px;
+    width: 100px;
+    height: 100px;
   }
 `;

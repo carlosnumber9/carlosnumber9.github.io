@@ -10,4 +10,9 @@ export const StyledNavbar = styled.div`
     margin-top: 60px;
     margin-bottom: 60px;
     color: black;
+
+    @media only screen and (max-width: 980px) {
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+  }
 `;

@@ -2,23 +2,16 @@ import { Era } from '../../declarations';
 
 export const eras: Era[] = [
   {
-    id: 'courses',
-    center: 'Universidad Politécnica de Madrid',
-    title: 'Samsung - UPM courses',
-    subtitle: 'Web development',
-    image: '/assets/courses.jpg',
+    id: 'upm',
+    center: "Universidad Politécnica de Madrid",
+    title: "Computer Science Engineering",
+    dates: "SEPT13-JUL19",
   },
   {
-    id: 'university',
-    center: 'Universidad Politécnica de Madrid',
-    title: 'Computer Science Engineering',
-    image: '/assets/university.jpg',
-  },
-  {
-    id: 'school',
-    center: 'Colegio San Buenaventura',
-    title: 'High School Graduate',
-    subtitle: 'Technology and Technical drawing',
-    image: '/assets/sanbuenaventura.jpg',
-  },
+    id: 'csb',
+    center: "Colegio San Buenaventura",
+    title: "High School Graduate",
+    dates: "SETP11-JUN13",
+    tags: ["Technology and Technical drawing"],
+  }
 ];

@@ -9,16 +9,16 @@ import { Section } from './declarations';
 
 export const SECTIONS: Section[] = [
   {
-    id: 'academic-background',
-    name: 'Academic background',
-    icon: faGraduationCap,
-    component: AcademicBackground,
-  },
-  {
     id: 'experience',
     name: 'Experience',
     icon: faBriefcase,
     component: Experience,
+  },
+  {
+    id: 'academic-background',
+    name: 'Academic background',
+    icon: faGraduationCap,
+    component: AcademicBackground,
   },
   { id: 'skills', name: 'Skills', icon: faLaptopCode, component: Skills },
   {

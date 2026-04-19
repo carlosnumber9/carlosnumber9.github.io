@@ -12,6 +12,7 @@ export const StyledFileButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 
   &:hover .file-icon {
     transform: scale(1.1);

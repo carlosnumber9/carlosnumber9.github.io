@@ -6,27 +6,31 @@ interface Props {
 }
 
 export const StyledEra = styled.div<Props>`
-  border: 1px solid lightgray;
-  border-radius: 10px;
   width: 95%;
-  ${({ era }) => css`
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 1),
-        rgba(255, 255, 255, 1),
-        transparent,
-        transparent
-      ),
-      url('${era.image}');
-  `}
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-
   transition: all 0.3s ease-in-out;
 
   &:hover {
     width: 98%;
     cursor: pointer;
+  }
+
+  span.era-dates {
+    color: lightgray;
+  }
+
+  div {
+    border-left: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  span {
+    margin-left: 20px;
   }
 `;
