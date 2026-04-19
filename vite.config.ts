@@ -6,7 +6,6 @@ export default defineConfig({
     react({
       include: /\.[jt]sx?$/,
       babel: {
-        plugins: ['styled-components'],
         babelrc: false,
         configFile: false,
       },
