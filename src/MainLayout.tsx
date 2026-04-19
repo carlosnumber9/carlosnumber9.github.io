@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SECTIONS } from './constants';
-import { FileButton, Footer, Navbar, PresentationCard } from './fragments';
+import { FileButton, Footer, Navbar, PageFold, PresentationCard } from './fragments';
 import { MainColumn } from './MainColumn';
 import { Section } from './declarations';
 
@@ -22,6 +22,7 @@ export const MainLayout = () => {
         <Footer />
       </MainColumn>
       <FileButton />
+      <PageFold />
     </>
   );
 };
