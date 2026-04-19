@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [
     react({
-      include: /.(ts|tsx)$/,
+      include: /\.[jt]sx?$/,
       babel: {
         plugins: ['styled-components'],
         babelrc: false,
