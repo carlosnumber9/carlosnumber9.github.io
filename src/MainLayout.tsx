@@ -2,11 +2,15 @@ import { useState } from 'react';
 import { SECTIONS } from './constants';
 import { FileButton, Footer, Navbar, PresentationCard } from './fragments';
 import { MainColumn } from './MainColumn';
-import { Section } from './declarations';
+import { Section, Theme } from './declarations';
+import { Veil } from './Veil';
 
 export const MainLayout = () => {
   const [selectedSection, setSelectedSection] = useState<Section>(SECTIONS[0]);
+  const [theme, setTheme] = useState<Theme>('light');
   const onSectionSelect = (section: Section) => setSelectedSection(section);
+  const onVeilToggle = () =>
+    setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
 
   return (
     <>
@@ -21,6 +25,7 @@ export const MainLayout = () => {
         <selectedSection.component />
         <Footer />
       </MainColumn>
+      <Veil theme={theme} onToggle={onVeilToggle} />
       <FileButton />
     </>
   );

@@ -30,3 +30,5 @@ export interface Repository {
   description: string;
   'html_url': string;
 }
+
+export type Theme = 'light' | 'dark';
