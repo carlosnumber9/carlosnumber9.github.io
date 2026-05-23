@@ -7,6 +7,7 @@ export const MainColumn = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-color: #f3f3f3;
 
   font-weight: 100;
   -webkit-font-smoothing: antialiased;

@@ -10,7 +10,7 @@ export const StyledSectionButton = styled.button<Props>`
   padding: 15px 25px 15px 25px;
   transition: 0.2s ease-in-out;
   border: none;
-  background-color: white;
+  background-color: transparent;
 
   .section-icon {
     cursor: pointer;

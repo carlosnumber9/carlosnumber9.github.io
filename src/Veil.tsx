@@ -5,6 +5,9 @@ interface StyledVeilProps {
   themeMode: Theme;
 }
 
+const VEIL_BACKDROP_FILTER =
+  'invert(1) hue-rotate(180deg) saturate(0.78) brightness(1.05) contrast(0.72)';
+
 export const StyledVeil = styled.div<StyledVeilProps>`
   position: fixed;
   top: 0;
@@ -13,9 +16,9 @@ export const StyledVeil = styled.div<StyledVeilProps>`
   height: 82px;
   pointer-events: none;
   z-index: 999;
-  background-color: rgb(47 47 47 / 0.08);
-  -webkit-backdrop-filter: invert(1) brightness(0.9) contrast(1.05);
-  backdrop-filter: invert(1) brightness(0.9) contrast(1.05);
+  background-color: rgb(255 255 255 / 0.05);
+  -webkit-backdrop-filter: ${VEIL_BACKDROP_FILTER};
+  backdrop-filter: ${VEIL_BACKDROP_FILTER};
   clip-path: polygon(100% 0, 100% 100%, 0 0);
   transform-origin: top right;
   transition:

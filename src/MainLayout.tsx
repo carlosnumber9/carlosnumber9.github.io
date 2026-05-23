@@ -14,7 +14,7 @@ export const MainLayout = () => {
 
   return (
     <>
-      <MainColumn>
+      <MainColumn data-veil-theme={theme}>
         <h1 className="site-name">Carlos Pinedo Sánchez</h1>
         <h3 className="site-subtitle">Frontend developer</h3>
         <PresentationCard />
