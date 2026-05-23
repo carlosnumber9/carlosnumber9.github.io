@@ -19,17 +19,26 @@ export const AcademicBackground: React.FC = () => {
         style={{ ...DEFAULT_FLEX_CONTAINER_STYLES, flexDirection: 'column', width: '80%' }}
       >
         {eras.map((era: Era) => (
-          <StyledEra era={era} key={era.id}>
-            <div>
-              <span className='era-dates'>{era.dates}</span>
-              <span>{era.center}</span>
-              <span>{era.title}</span>
+          <StyledEra href={era.url} key={era.id} target="_blank">
+            <div className="era-content">
+              <span className="era-dates">{era.dates}</span>
+              <h3>{era.center}</h3>
+              <h4>{era.title}</h4>
+              {era.tags?.length ? (
+                <div className="era-tags">
+                  {era.tags.map((tag) => (
+                    <span className="era-tag" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
             </div>
           </StyledEra>
         ))}
-    </motion.div>
-    </AnimatePresence >
+      </motion.div>
+    </AnimatePresence>
   ) : (
-  <Loader />
-);
+    <Loader />
+  );
 };

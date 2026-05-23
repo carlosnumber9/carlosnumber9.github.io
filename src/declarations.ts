@@ -12,6 +12,7 @@ export interface Era {
   center: string;
   title: string;
   dates: string;
+  url: string;
   tags?: string[];
 }
 
