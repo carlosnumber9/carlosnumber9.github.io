@@ -4,7 +4,8 @@ import { DEFAULT_FLEX_CONTAINER_STYLES } from '../../constants';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Loader } from '../../fragments';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export const Projects = () => {
   const { loading, repos } = useRepos();
@@ -21,24 +22,41 @@ export const Projects = () => {
         style={{
           ...DEFAULT_FLEX_CONTAINER_STYLES,
           flexDirection: 'row',
-          width: '80%',
-          gap: '5px',
+          width: '88%',
+          gap: '16px',
+          alignItems: 'stretch',
         }}
       >
         {repos.map((repo) => (
           <StyledProject key={repo.id}>
-            <h3 style={{ marginLeft: '20px' }}>{repo.name}</h3>
-            <h4 style={{ marginLeft: '20px', color: 'gray' }}>
-              {repo.description}
-            </h4>
-            <a
-              href={repo['html_url']}
-              target="_blank"
-              style={{ position: 'absolute', right: '5px', top: '5px' }}
-              key={repo.id}
-            >
-              <FontAwesomeIcon icon={faCodeBranch} size="lg" className='repo-icon' />
-            </a>
+            <div className="project-heading">
+              <span className="project-icon">
+                <FontAwesomeIcon icon={faGithub} />
+              </span>
+              <h3>{repo.name}</h3>
+            </div>
+
+            <p>{repo.description || 'Personal showcase project.'}</p>
+
+            <div className="project-footer">
+              <div className="project-tags">
+                {repo.language && <span>{repo.language}</span>}
+              </div>
+
+              <a
+                href={repo['html_url']}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Open ${repo.name} on GitHub`}
+                title={`Open ${repo.name} on GitHub`}
+              >
+                <FontAwesomeIcon
+                  icon={faArrowUpRightFromSquare}
+                  size="sm"
+                  className="repo-icon"
+                />
+              </a>
+            </div>
           </StyledProject>
         ))}
       </motion.div>
