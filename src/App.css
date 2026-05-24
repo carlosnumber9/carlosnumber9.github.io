@@ -13,6 +13,8 @@
   font-weight: 500;
   letter-spacing: 0.02em;
   margin-bottom: 8px;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .site-subtitle {
@@ -21,6 +23,8 @@
   font-weight: 400;
   letter-spacing: 0.01em;
   font-size: 1.1rem;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 @media only screen and (min-width: 980px) {

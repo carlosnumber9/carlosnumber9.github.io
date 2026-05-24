@@ -43,6 +43,8 @@ export const StyledProject = styled.div`
     line-height: 1.25;
     color: #171717;
     overflow-wrap: anywhere;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   p {
@@ -50,6 +52,8 @@ export const StyledProject = styled.div`
     color: rgba(55, 55, 55, 0.78);
     font-size: 0.94rem;
     line-height: 1.45;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   .project-footer {
@@ -76,6 +80,8 @@ export const StyledProject = styled.div`
     background-color: rgba(1, 1, 1, 0.05);
     color: #333;
     font-size: 0.78rem;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   a {
