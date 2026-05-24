@@ -28,6 +28,8 @@ export const MainColumn = styled.div`
   .hero-stage,
   .content-stage {
     width: 100%;
+    flex: 0 0 100vh;
+    flex-basis: 100svh;
     min-height: 100vh;
     min-height: 100svh;
     scroll-snap-align: start;
@@ -46,14 +48,19 @@ export const MainColumn = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
+    height: 100svh;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .section-stage {
     width: 100%;
     flex: 1;
+    min-height: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: safe center;
     padding: 24px 0;
   }
 
