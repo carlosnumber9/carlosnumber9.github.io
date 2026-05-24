@@ -9,6 +9,7 @@ export const MainColumn = styled.div`
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
+  scrollbar-width: none;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   background-color: #f3f3f3;
@@ -24,6 +25,10 @@ export const MainColumn = styled.div`
     -3px 0px 5px 0px rgba(156, 156, 156, 1);
 
   font-family: 'Oxygen', sans-serif;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .hero-stage,
   .content-stage {
@@ -52,6 +57,11 @@ export const MainColumn = styled.div`
     height: 100svh;
     overflow-x: hidden;
     overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .content-stage::-webkit-scrollbar {
+    display: none;
   }
 
   .section-stage {
