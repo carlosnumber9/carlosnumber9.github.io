@@ -93,6 +93,8 @@ export const StyledVeilLayer = styled.div<StyledVeilLayerProps>`
 `;
 
 export const StyledVeilTrigger = styled.button`
+  -webkit-appearance: none;
+  appearance: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -103,7 +105,15 @@ export const StyledVeilTrigger = styled.button`
   background: transparent;
   clip-path: polygon(100% 0, 100% 100%, 0 0);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  touch-action: manipulation;
   z-index: 1000;
+
+  &:active {
+    background: transparent;
+  }
 
   &:focus-visible {
     outline: 2px solid currentColor;
