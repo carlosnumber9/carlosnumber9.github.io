@@ -1,13 +1,10 @@
 import { DEFAULT_FLEX_CONTAINER_STYLES } from '../../constants';
-import { Loader } from '../../fragments';
-import { useDelay } from '../../useDelay';
 import { StyledSkill } from './StyledSkill';
 import { skills } from './skillsList';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export const Skills: React.FC = () => {
-  const isReady: boolean = useDelay();
-  return isReady ? (
+  return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
@@ -25,7 +22,5 @@ export const Skills: React.FC = () => {
         ))}
       </motion.div>
     </AnimatePresence>
-  ) : (
-    <Loader />
   );
 };

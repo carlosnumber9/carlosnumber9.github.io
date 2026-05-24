@@ -4,8 +4,6 @@ import { Job } from '../../declarations';
 import { StyledJobInfo } from './StyledJobInfo';
 import { Timeline } from './TimeLine';
 import { jobs } from './jobs';
-import { useDelay } from '../../useDelay';
-import { Loader } from '../../fragments';
 import { StyledBadge } from './StyledBadge';
 import { StyledJob } from './StyledJob';
 import { useMediaQuery } from 'react-responsive';
@@ -17,10 +15,9 @@ const getFeatureURL = (text: string) =>
   `https://www.google.com/search?q=${text}`;
 
 export const Experience = () => {
-  const isReady = useDelay();
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
   const hasHover = useMediaQuery({ query: '(hover: hover)' });
-  return isReady ? (
+  return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
@@ -82,7 +79,5 @@ export const Experience = () => {
         <Timeline />
       </motion.div>
     </AnimatePresence >
-  ) : (
-    <Loader />
   );
 };

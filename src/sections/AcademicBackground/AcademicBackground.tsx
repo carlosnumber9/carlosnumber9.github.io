@@ -3,13 +3,9 @@ import { DEFAULT_FLEX_CONTAINER_STYLES } from '../../constants';
 import { eras } from './eras';
 import { StyledEra } from './StyledEra';
 import { Era } from '../../declarations';
-import { useDelay } from '../../useDelay';
-import { Loader } from '../../fragments';
 
 export const AcademicBackground: React.FC = () => {
-  const isReady: boolean = useDelay();
-
-  return isReady ? (
+  return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
@@ -38,7 +34,5 @@ export const AcademicBackground: React.FC = () => {
         ))}
       </motion.div>
     </AnimatePresence>
-  ) : (
-    <Loader />
   );
 };
