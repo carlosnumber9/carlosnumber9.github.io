@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledSkill = styled.span`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,13 +19,9 @@ export const StyledSkill = styled.span`
   }
 
   .icon {
+    position: relative;
+    z-index: 1001;
     width: 100px;
     height: 100px;
-    transition: filter 720ms cubic-bezier(0.76, 0, 0.24, 1);
-  }
-
-  [data-veil-theme='dark'] & .icon {
-    filter: contrast(1.55) brightness(0.96) saturate(1.75) hue-rotate(180deg)
-      invert(1);
   }
 `;
