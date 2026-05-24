@@ -1,7 +1,19 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
+export const StyledSkillsList = styled(motion.div)`
+  position: relative;
+  z-index: 901;
+
+  .skill-link {
+    position: relative;
+    z-index: 1;
+  }
+`;
 
 export const StyledSkill = styled.span`
   position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;

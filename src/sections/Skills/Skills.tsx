@@ -1,12 +1,12 @@
 import { DEFAULT_FLEX_CONTAINER_STYLES } from '../../constants';
-import { StyledSkill } from './StyledSkill';
+import { StyledSkill, StyledSkillsList } from './StyledSkill';
 import { skills } from './skillsList';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 export const Skills: React.FC = () => {
   return (
     <AnimatePresence>
-      <motion.div
+      <StyledSkillsList
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -14,13 +14,19 @@ export const Skills: React.FC = () => {
         style={{ ...DEFAULT_FLEX_CONTAINER_STYLES, flexWrap: 'wrap' }}
       >
         {skills.map((skill) => (
-          <a href={skill.anchor} target="_blank" title={skill.name} key={skill.id}>
+          <a
+            className="skill-link"
+            href={skill.anchor}
+            target="_blank"
+            title={skill.name}
+            key={skill.id}
+          >
             <StyledSkill>
               <img src={skill.icon} alt={skill.name} className="icon" />
             </StyledSkill>
           </a>
         ))}
-      </motion.div>
+      </StyledSkillsList>
     </AnimatePresence>
   );
 };
