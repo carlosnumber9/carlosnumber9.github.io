@@ -23,7 +23,6 @@ export const StyledCard = styled.div`
     width: 42px;
     height: 42px;
     color: black;
-    background-color: rgb(255 255 255 / 0.38);
     text-decoration: none;
     cursor: pointer;
     transition:
