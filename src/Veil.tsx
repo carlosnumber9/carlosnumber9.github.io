@@ -2,20 +2,25 @@ import { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 type VeilTone = 'dark' | 'light';
+type VeilMode = 'veil' | 'reveal';
 
 interface VeilLayer {
   id: number;
   isExpanded: boolean;
+  isRevealed?: boolean;
   isSettled?: boolean;
   isVisible: boolean;
+  mode?: VeilMode;
   tone: VeilTone;
 }
 
 interface StyledVeilLayerProps {
   $isExpanded: boolean;
+  $isRevealed: boolean;
   $isSettled: boolean;
   $isVisible: boolean;
   $index: number;
+  $mode: VeilMode;
   $tone: VeilTone;
 }
 
@@ -43,25 +48,47 @@ export const StyledVeilLayer = styled.div<StyledVeilLayerProps>`
   position: fixed;
   top: 0;
   right: 0;
-  width: ${({ $isExpanded, $isVisible }) =>
-    $isExpanded ? VEIL_EXPANDED_SIZE : $isVisible ? VEIL_CORNER_SIZE : 0};
-  height: ${({ $isExpanded, $isVisible }) =>
-    $isExpanded ? VEIL_EXPANDED_SIZE : $isVisible ? VEIL_CORNER_SIZE : 0};
+  width: ${({ $isExpanded, $isVisible, $mode }) =>
+    $mode === 'reveal'
+      ? '100vw'
+      : $isExpanded
+        ? VEIL_EXPANDED_SIZE
+        : $isVisible
+          ? VEIL_CORNER_SIZE
+          : 0};
+  height: ${({ $isExpanded, $isVisible, $mode }) =>
+    $mode === 'reveal'
+      ? '100vh'
+      : $isExpanded
+        ? VEIL_EXPANDED_SIZE
+        : $isVisible
+          ? VEIL_CORNER_SIZE
+          : 0};
   pointer-events: none;
   z-index: ${({ $index }) => 900 + $index};
   background-color: rgb(255 255 255 / 0.05);
   -webkit-backdrop-filter: ${({ $tone }) => getVeilBackdropFilter($tone)};
   backdrop-filter: ${({ $tone }) => getVeilBackdropFilter($tone)};
-  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  clip-path: ${({ $isRevealed, $mode }) =>
+    $mode === 'reveal'
+      ? `polygon(
+          0 0,
+          calc(100% - ${$isRevealed ? VEIL_EXPANDED_SIZE : '0px'}) 0,
+          100% ${$isRevealed ? VEIL_EXPANDED_SIZE : '0px'},
+          100% 100%,
+          0 100%
+        )`
+      : 'polygon(100% 0, 100% 100%, 0 0)'};
   transform-origin: top right;
   transition: ${({ $isSettled }) =>
     $isSettled
       ? 'none'
       : css`
           width ${VEIL_TRANSITION_MS}ms cubic-bezier(0.76, 0, 0.24, 1),
-          height ${VEIL_TRANSITION_MS}ms cubic-bezier(0.76, 0, 0.24, 1)
+          height ${VEIL_TRANSITION_MS}ms cubic-bezier(0.76, 0, 0.24, 1),
+          clip-path ${VEIL_TRANSITION_MS}ms cubic-bezier(0.76, 0, 0.24, 1)
         `};
-  will-change: width, height;
+  will-change: width, height, clip-path;
 
 `;
 
@@ -109,6 +136,18 @@ export const Veil = ({
     latestLayerCount.current = layerCount;
 
     setLayers((currentLayers) => {
+      if (layerCount % 2 === 0) {
+        return currentLayers
+          .filter((layer) => layer.isExpanded)
+          .map((layer) => ({
+            ...layer,
+            isRevealed: false,
+            isSettled: false,
+            mode: 'reveal',
+            tone: 'dark',
+          }));
+      }
+
       const expandingLayer = currentLayers[currentLayers.length - 1];
       const previousLayers = currentLayers.slice(0, -1);
 
@@ -121,6 +160,21 @@ export const Veil = ({
         },
       ];
     });
+
+    const revealTimeout = window.setTimeout(() => {
+      if (latestLayerCount.current !== layerCount || layerCount % 2 === 1) {
+        return;
+      }
+
+      setLayers((currentLayers) =>
+        currentLayers.map((layer) => ({ ...layer, isRevealed: true })),
+      );
+    }, VEIL_CORNER_PAINT_DELAY_MS);
+
+    const settleDelay =
+      layerCount % 2 === 0
+        ? VEIL_TRANSITION_MS + VEIL_CORNER_PAINT_DELAY_MS
+        : VEIL_TRANSITION_MS;
 
     const settleTimeout = window.setTimeout(() => {
       if (latestLayerCount.current !== layerCount) return;
@@ -167,9 +221,9 @@ export const Veil = ({
       }, VEIL_CORNER_DELAY_MS);
 
       timeouts.current = [...timeouts.current, cornerDelayTimeout];
-    }, VEIL_TRANSITION_MS);
+    }, settleDelay);
 
-    timeouts.current = [...timeouts.current, settleTimeout];
+    timeouts.current = [...timeouts.current, revealTimeout, settleTimeout];
   }, [layerCount]);
 
   useEffect(() => {
@@ -185,8 +239,10 @@ export const Veil = ({
           key={layer.id}
           $index={index}
           $isExpanded={layer.isExpanded}
+          $isRevealed={Boolean(layer.isRevealed)}
           $isSettled={Boolean(layer.isSettled)}
           $isVisible={layer.isVisible}
+          $mode={layer.mode ?? 'veil'}
           $tone={layer.tone}
           aria-hidden="true"
         />

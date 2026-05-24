@@ -17,9 +17,11 @@ export const useVeilTheme = () => {
     setIsThemeTransitioning(true);
     setVeilLayerCount((currentLayerCount) => currentLayerCount + 1);
 
+    const themeDelay = nextTheme === 'light' ? 0 : VEIL_THEME_APPLY_MS;
+
     themeTimeout.current = window.setTimeout(() => {
       setTheme(nextTheme);
-    }, VEIL_THEME_APPLY_MS);
+    }, themeDelay);
 
     interactionTimeout.current = window.setTimeout(() => {
       setIsThemeTransitioning(false);
