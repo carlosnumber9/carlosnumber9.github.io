@@ -42,11 +42,50 @@ export const MainColumn = styled.div`
   }
 
   .hero-stage {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 32px 24px;
+  }
+
+  .scroll-cue {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: lightgray;
+    cursor: pointer;
+    transform: translate(-50%, 0);
+    animation: scroll-cue-pulse 1.8s ease-in-out infinite;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .scroll-cue:focus-visible {
+    outline: 2px solid lightgray;
+    outline-offset: 3px;
+  }
+
+  @keyframes scroll-cue-pulse {
+    0%,
+    100% {
+      transform: translate(-50%, 0) scale(1);
+    }
+
+    50% {
+      transform: translate(-50%, 6px) scale(1.08);
+    }
   }
 
   .content-stage {
