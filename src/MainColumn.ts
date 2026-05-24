@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
 export const MainColumn = styled.div`
-  min-height: 100vh;
+  height: 100vh;
+  height: 100svh;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
   background-color: #f3f3f3;
 
   font-weight: 100;
@@ -21,6 +25,38 @@ export const MainColumn = styled.div`
 
   font-family: 'Oxygen', sans-serif;
 
+  .hero-stage,
+  .content-stage {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .hero-stage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 24px;
+  }
+
+  .content-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-stage {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+  }
+
   @media only screen and (min-width: 980px) {
     width: 980px;
   }
@@ -31,6 +67,14 @@ export const MainColumn = styled.div`
 
   @media only screen and (max-width: 600px) {
     width: 100vw;
+
+    .hero-stage {
+      padding: 28px 18px;
+    }
+
+    .section-stage {
+      padding: 18px 0;
+    }
   }
 
 `;

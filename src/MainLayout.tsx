@@ -20,15 +20,22 @@ export const MainLayout = () => {
   return (
     <>
       <MainColumn data-veil-theme={theme}>
-        <h1 className="site-name">Carlos Pinedo Sánchez</h1>
-        <h3 className="site-subtitle">Frontend developer</h3>
-        <PresentationCard />
-        <Navbar
-          onSectionSelect={onSectionSelect}
-          selectedSection={selectedSection}
-        />
-        <selectedSection.component />
-        <Footer />
+        <section className="hero-stage" aria-label="Presentation">
+          <h1 className="site-name">Carlos Pinedo Sánchez</h1>
+          <h3 className="site-subtitle">Frontend developer</h3>
+          <PresentationCard />
+        </section>
+
+        <section className="content-stage" aria-label="Portfolio sections">
+          <Navbar
+            onSectionSelect={onSectionSelect}
+            selectedSection={selectedSection}
+          />
+          <main className="section-stage">
+            <selectedSection.component />
+          </main>
+          <Footer />
+        </section>
       </MainColumn>
       <Veil
         layerCount={veilLayerCount}
