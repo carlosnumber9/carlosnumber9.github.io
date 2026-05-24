@@ -5,15 +5,21 @@ interface Props {
 }
 
 export const StyledSectionButton = styled.button<Props>`
+  -webkit-appearance: none;
+  appearance: none;
   font-family: 'Oxygen', sans-serif;
   font-size: 1rem;
   padding: 15px 25px 15px 25px;
   transition: 0.2s ease-in-out;
   border: none;
   background-color: transparent;
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+  -webkit-tap-highlight-color: transparent;
 
   .section-icon {
     cursor: pointer;
+    color: inherit;
   }
 
   ${({ selected }) =>
