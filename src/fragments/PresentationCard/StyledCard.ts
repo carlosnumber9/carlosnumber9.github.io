@@ -1,124 +1,68 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.div`
-
   display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: space-between;
-  margin-top: 30px;
-  padding: 10px;
-  width: 50wv;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 8px 12px;
+  width: fit-content;
+  max-width: calc(100vw - 48px);
+  border: 1px solid rgb(215 215 215 / 0.72);
+  background-color: rgb(255 255 255 / 0.34);
 
   -webkit-box-shadow: 0px 0px 6px 1px rgba(135, 135, 135, 0.5);
   -moz-box-shadow: 0px 0px 6px 1px rgba(135, 135, 135, 0.5);
   box-shadow: 0px 0px 6px 1px rgba(135, 135, 135, 0.5);
 
-  .card-column {
-    display: grid;
-  }
-
-  .first-column {
-    grid-template-columns: 2;
-    grid-template-rows: 5;
-  }
-
-  .first-column * {
-    margin: auto;
-    padding: 3px;
-  }
-
-  .card-hr {
+  .contact-link {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-items: flex-start;
-    height: 8px;
-    border: transparent;
-    margin: none;
-    padding: none;
-    width: 100%;
-
-    hr {
-      text-align: left;
-      border-top: 1px solid rgb(199, 199, 199);
-      border-left: transparent;
-      border-right: transparent;
-      border-bottom: transparent;
-      width: 95%;
-      border-width: 1px;
-      margin-right: 0;
-      margin-left: 0;
-    }
-  }
-  #phone-number-icon {
-    grid-row: 1 / 2;
-    grid-column: 1/ 2;
-  }
-
-  #phone-number-text {
-    grid-row: 1/2;
-    grid-column: 2 / 3;
-  }
-
-  #second-hr {
-    grid-row: 2/3;
-    grid-column: 1 / 3;
-  }
-
-  #email-icon {
-    grid-row: 3/3;
-    grid-column: 1 / 2;
-  }
-
-  #email-text {
-    grid-row: 3/3;
-    grid-column: 2 / 3;
-  }
-
-  .second-column {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .second-column * {
-    margin: 3px;
-  }
-
-  .card-icon {
+    justify-content: center;
+    width: 42px;
+    height: 42px;
     color: black;
-  }
-
-  a {
-    color: black;
+    background-color: rgb(255 255 255 / 0.38);
     text-decoration: none;
     cursor: pointer;
+    transition:
+      background-color 0.16s ease-in-out,
+      box-shadow 0.16s ease-in-out,
+      color 0.16s ease-in-out,
+      transform 0.16s ease-in-out;
 
     &:hover {
       color: darkblue;
+      background-color: rgb(255 255 255 / 0.72);
+      box-shadow: 0px 6px 16px rgba(135, 135, 135, 0.24);
+      transform: translateY(-1px);
     }
 
-    transition: all 0.1s ease-in-out;
-  }
-    
-  @media only screen and (min-width: 980px) {
-    width: 350px;
+    &:focus-visible {
+      outline: 2px solid darkblue;
+      outline-offset: 3px;
+    }
   }
 
-  @media only screen and (min-width: 600px) and (max-width: 980px) {
-    width: 350px;
+  .contact-icon {
+    width: 22px;
+    height: 22px;
   }
 
   @media only screen and (max-width: 600px) {
-    width: 250px;
-    .card-text {
-      font-size: 1.1rem;
-    }
-    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 7px 10px;
 
-    .second-column {
-    flex-direction: row;
-    margin-top: 10px;
-}
+    .contact-link {
+      width: 38px;
+      height: 38px;
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+    }
   }
 `;
