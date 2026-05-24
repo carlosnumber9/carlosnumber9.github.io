@@ -73,8 +73,8 @@ export const StyledVeilLayer = styled.div<StyledVeilLayerProps>`
     $mode === 'reveal'
       ? `polygon(
           0 0,
-          calc(100% - ${$isRevealed ? VEIL_EXPANDED_SIZE : '0px'}) 0,
-          100% ${$isRevealed ? VEIL_EXPANDED_SIZE : '0px'},
+          calc(100% - ${$isRevealed ? VEIL_EXPANDED_SIZE : VEIL_CORNER_SIZE}) 0,
+          100% ${$isRevealed ? VEIL_EXPANDED_SIZE : VEIL_CORNER_SIZE},
           100% 100%,
           0 100%
         )`
