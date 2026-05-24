@@ -21,7 +21,7 @@ export const Footer: React.FC = () => (
         textOverflow: 'ellipsis',
       }}
     >
-      © 2024 Carlos Pinedo Sánchez. All rights reserved.
+      © 2026 Carlos Pinedo Sánchez. All rights reserved.
     </span>
   </footer>
 );
