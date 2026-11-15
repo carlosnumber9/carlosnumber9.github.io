@@ -1,0 +1,18 @@
+---
+title: "A clear, specific title"
+summary: "One or two sentences that explain what the reader will take away."
+date: "2026-08-22"
+language: en
+---
+
+Open with the idea or problem that motivated the article.
+
+## A useful section
+
+Develop the argument with concrete examples.
+
+```ts
+const lesson = 'Prefer evidence over assumptions';
+```
+
+Close with the practical lesson or open question.

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Section } from '../../../constants';
+import { Section } from '../../../declarations';
 import { StyledSectionButton } from './StyledSectionButton';
 
 interface SectionButtonProps {
@@ -14,10 +14,14 @@ export const SectionButton: React.FC<SectionButtonProps> = ({
   selected,
 }) => (
   <StyledSectionButton
+    aria-label={section.name}
+    aria-pressed={selected}
     selected={selected}
     onClick={onClick}
+    title={section.name}
+    type="button"
   >
-    <span className="navbar-item-title"> {`${section.name}`} </span>
+    <span className="navbar-item-title">{section.name}</span>
     <FontAwesomeIcon className="section-icon" icon={section.icon} size="2xl" />
   </StyledSectionButton>
 );

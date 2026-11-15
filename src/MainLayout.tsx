@@ -25,6 +25,7 @@ export const MainLayout = () => {
     onVeilToggle,
   } = useVeilTheme();
   const onSectionSelect = (section: Section) => setSelectedSection(section);
+  const SelectedSection = selectedSection.component;
 
   return (
     <>
@@ -49,7 +50,7 @@ export const MainLayout = () => {
             selectedSection={selectedSection}
           />
           <main className="section-stage">
-            <selectedSection.component />
+            <SelectedSection contentScrollRef={contentStageRef} />
           </main>
           <Footer />
         </section>

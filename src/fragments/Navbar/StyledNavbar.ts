@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledNavbar = styled.div`
+export const StyledNavbar = styled.nav`
   position: sticky;
   top: 0;
   z-index: 20;
@@ -20,6 +20,7 @@ export const StyledNavbar = styled.div`
 
   @media only screen and (max-width: 980px) {
     width: 100%;
+    padding-right: 40px;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
   }

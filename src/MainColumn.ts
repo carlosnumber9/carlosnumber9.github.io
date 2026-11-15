@@ -106,7 +106,7 @@ export const MainColumn = styled.div`
   .section-stage {
     width: 100%;
     flex: 1;
-    min-height: 0;
+    min-height: min-content;
     display: flex;
     justify-content: center;
     align-items: safe center;

@@ -2,9 +2,17 @@ import {
   faGraduationCap,
   faBriefcase,
   faLaptopCode,
+  faPenNib,
   faProjectDiagram,
 } from '@fortawesome/free-solid-svg-icons';
-import { AcademicBackground, Experience, Skills, Projects } from './sections';
+import {
+  AcademicBackground,
+  Experience,
+  Skills,
+  Projects,
+  Writing,
+  writingPosts,
+} from './sections';
 import { Section } from './declarations';
 
 export const SECTIONS: Section[] = [
@@ -27,6 +35,16 @@ export const SECTIONS: Section[] = [
     icon: faProjectDiagram,
     component: Projects,
   },
+  ...(writingPosts.length > 0
+    ? [
+        {
+          id: 'writing',
+          name: 'Writing',
+          icon: faPenNib,
+          component: Writing,
+        },
+      ]
+    : []),
 ];
 
 export const DEFAULT_FLEX_CONTAINER_STYLES: React.CSSProperties = {

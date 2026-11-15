@@ -14,6 +14,8 @@ export const StyledSectionButton = styled.button<Props>`
   border: none;
   background-color: transparent;
   color: inherit;
+  flex: 0 1 auto;
+  min-width: 0;
   -webkit-text-fill-color: currentColor;
   -webkit-tap-highlight-color: transparent;
 
@@ -27,6 +29,11 @@ export const StyledSectionButton = styled.button<Props>`
     css`
       z-index: 2;
     `}
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: -4px;
+  }
 
   @media only screen and (min-width: 980px) {
     .section-icon {
@@ -55,8 +62,17 @@ export const StyledSectionButton = styled.button<Props>`
   }
 
   @media only screen and (max-width: 980px) {
+    flex: 1 1 0;
+    padding: 15px 0;
+
     .navbar-item-title {
       display: none;
     }
+
+    ${({ selected }) =>
+      selected &&
+      css`
+        box-shadow: inset 0 -2px currentColor;
+      `}
   }
 `;

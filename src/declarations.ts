@@ -1,10 +1,25 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import type { ComponentType, RefObject } from 'react';
+
+export interface SectionContentProps {
+  contentScrollRef: RefObject<HTMLElement | null>;
+}
 
 export interface Section {
   id: string;
   name: string;
   icon: IconDefinition;
-  component: React.FC;
+  component: ComponentType<SectionContentProps>;
+}
+
+export interface WritingPost {
+  slug: string;
+  title: string;
+  summary: string;
+  date: string;
+  language: 'en' | 'es';
+  readingMinutes: number;
+  html: string;
 }
 
 export interface Era {

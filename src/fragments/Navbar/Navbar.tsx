@@ -14,7 +14,7 @@ export const Navbar: React.FC<Props> = ({
   selectedSection,
 }) => {
   return (
-    <StyledNavbar>
+    <StyledNavbar aria-label="Portfolio sections">
       {SECTIONS.map((section) => (
         <SectionButton
           section={section}
