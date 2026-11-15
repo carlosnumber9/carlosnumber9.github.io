@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledProject = styled.div`
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   width: min(100%, 360px);
   min-height: 180px;
   padding: 18px;
@@ -16,6 +19,93 @@ export const StyledProject = styled.div`
     border-color 0.16s ease-in-out,
     box-shadow 0.16s ease-in-out,
     background-color 0.16s ease-in-out;
+
+  .project-demo,
+  .project-shade,
+  .project-toggle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-demo {
+    object-fit: cover;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(1.035);
+    transition: opacity 0.18s ease-in-out;
+  }
+
+  .project-shade {
+    background-color: #111;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s ease-in-out;
+  }
+
+  .project-toggle {
+    z-index: 1;
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+
+    &:focus-visible {
+      outline: 2px solid #f3f3f3;
+      outline-offset: -5px;
+    }
+  }
+
+  .project-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+    min-width: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease-in-out;
+  }
+
+  &[data-details-visible='false'] .project-content {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &[data-demo-ready='true'] .project-demo {
+    opacity: 1;
+  }
+
+  &[data-demo-ready='true'][data-details-visible='true'] {
+    .project-demo {
+      filter: blur(3px);
+    }
+
+    .project-shade {
+      opacity: 0.8;
+    }
+
+    h3,
+    p,
+    .project-icon,
+    .project-tags span,
+    a {
+      color: #f3f3f3;
+    }
+
+    .project-icon,
+    .project-tags span,
+    a {
+      border-color: rgba(243, 243, 243, 0.5);
+      background-color: rgba(243, 243, 243, 0.12);
+    }
+  }
 
   .project-heading {
     display: flex;
@@ -85,6 +175,7 @@ export const StyledProject = styled.div`
   }
 
   a {
+    pointer-events: auto;
     width: 34px;
     height: 34px;
     border: 1px solid lightgray;
@@ -102,6 +193,11 @@ export const StyledProject = styled.div`
 
     &:hover .repo-icon {
       transform: translate(1px, -1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
     }
   }
 
@@ -126,5 +222,21 @@ export const StyledProject = styled.div`
     width: 100%;
     min-height: 165px;
     padding: 16px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    .project-demo,
+    .project-shade,
+    .project-content,
+    .repo-icon,
+    a {
+      transition: none;
+    }
+
+    &:hover,
+    a:hover .repo-icon {
+      transform: none;
+    }
   }
 `;

@@ -1,10 +1,17 @@
-interface Project {
+export interface Project {
   id: string;
   name: string;
   description: string;
   language?: string;
   url: string;
+  demo?: string;
 }
+
+const demos = import.meta.glob<string>('./demos/*.mp4', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+});
 
 export const projects: readonly Project[] = [
   {
@@ -42,4 +49,7 @@ export const projects: readonly Project[] = [
     language: 'TypeScript',
     url: 'https://github.com/carlosnumber9/secret-sanchez',
   },
-];
+].map((project) => ({
+  ...project,
+  demo: demos[`./demos/${project.id}.mp4`],
+}));
