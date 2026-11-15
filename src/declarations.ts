@@ -40,13 +40,4 @@ export interface Job {
   url: string;
 }
 
-export interface Repository {
-  id: string;
-  name: string;
-  description: string;
-  'html_url': string;
-  language?: string;
-  topics: string[];
-}
-
 export type Theme = 'light' | 'dark';
