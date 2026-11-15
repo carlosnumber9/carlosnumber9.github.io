@@ -90,6 +90,23 @@ export const StyledVeilLayer = styled.div<StyledVeilLayerProps>`
         `};
   will-change: width, height, clip-path;
 
+  &[data-project-clip] {
+    transition-property: width, height;
+  }
+
+  .veil-reveal-size {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: ${({ $isRevealed }) =>
+      $isRevealed ? VEIL_EXPANDED_SIZE : VEIL_CORNER_SIZE};
+    height: 0;
+    visibility: hidden;
+    transition: ${({ $isSettled }) =>
+      $isSettled
+        ? 'none'
+        : `width ${VEIL_TRANSITION_MS}ms cubic-bezier(0.76, 0, 0.24, 1)`};
+  }
 `;
 
 export const StyledVeilTrigger = styled.button`
@@ -247,6 +264,8 @@ export const Veil = ({
       {layers.map((layer, index) => (
         <StyledVeilLayer
           key={layer.id}
+          data-veil-layer="true"
+          data-veil-mode={layer.mode ?? 'veil'}
           $index={index}
           $isExpanded={layer.isExpanded}
           $isRevealed={Boolean(layer.isRevealed)}
@@ -255,7 +274,9 @@ export const Veil = ({
           $mode={layer.mode ?? 'veil'}
           $tone={layer.tone}
           aria-hidden="true"
-        />
+        >
+          <span className="veil-reveal-size" />
+        </StyledVeilLayer>
       ))}
       <StyledVeilTrigger
         type="button"

@@ -1,13 +1,19 @@
+import { useRef } from 'react';
 import { projects } from './projectsList';
 import { ProjectCard } from './ProjectCard';
+import { useProjectVeilClip } from './useProjectVeilClip';
 import { DEFAULT_FLEX_CONTAINER_STYLES } from '../../constants';
+import type { SectionContentProps } from '../../declarations';
 import { AnimatePresence, motion } from 'framer-motion';
 
-export const Projects = () => {
+export const Projects = ({ contentScrollRef }: SectionContentProps) => {
+  const projectsRef = useRef<HTMLDivElement>(null);
+  useProjectVeilClip(projectsRef, contentScrollRef);
 
   return (
     <AnimatePresence>
       <motion.div
+        ref={projectsRef}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
